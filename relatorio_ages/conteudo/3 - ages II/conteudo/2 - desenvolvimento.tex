@@ -1,0 +1,37 @@
+\section[Desenvolvimento do Projeto]{Desenvolvimento do Projeto}
+
+\subsection{Repositório do Código Fonte do Projeto}
+  https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-wiki
+
+  https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-api
+
+  https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-ui
+
+  https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/ethereum-contract
+
+  https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/ethereum-bridge
+
+  Nosso projeto foi dividido em cinco repositórios diferentes. O primeiro e padrão da Wiki, o segundo do backend, o terceiro ao frontend , o quarto a API do contrato da nossa aplicação na etherium e por ultimo a "ponte" que liga a blockchain a nossa aplicação backend.
+
+\subsection{Banco de Dados Utilizado}
+ https://tools.ages.pucrs.br/planline/wiki/-/wikis/banco\_dados
+
+ Para a nossa aplicação usamos o banco de dados relacional Postgrees. Para ele criamos quatro entidades, Certificado, Empresa, Usuário e Permissão. Além dos relcionamentos básicos de conexão entre as entidades criamos um levando em consideração a geração de logs. Além do Postgrees usamos o firebase para a autenticação de usuários.
+\sloppy
+\subsection{Arquitetura Utilizada}
+ https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-wiki/-/wikis/arquitetura
+
+ https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-wiki/-/wikis/infraestrutura
+
+ Para nossa arquitetura, organizamos o sistema em três camadas distintas: o backend, o frontend e a blockchain. A interação entre o frontend e a blockchain ocorria exclusivamente através do backend. Isso significa que todas as requisições e operações realizadas pelo frontend relacionadas à blockchain passavam primeiro pelo backend, que atuava como intermediário. Essa abordagem permitiu maior controle, segurança e facilita a integração entre as diferentes partes do sistema, garantindo que as operações na blockchain sejam realizadas de maneira eficiente e segura, sem expor diretamente o frontend à complexidade da infraestrutura blockchain.
+
+\subsection{Protótipos das Telas Desenvolvidas}
+\sloppy
+  https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-wiki/-/wikis/design/mockups
+
+  Para a criação de mockups, usamos o figma. Mais detalhes sobre os mockups, utilize o link acima.
+
+\subsection{Tecnologias Utilizadas}
+  https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-wiki/-/wikis/arquitetura
+  
+  Para o frontend usamos TypeScript e  o framework React. Para o backend usamos o Java 21 em conjunto com o  framework SpringBoot. Para a blockchain, além de usarmos a Etherium, usamos sua linguagem Solidity para a criação de contratos.

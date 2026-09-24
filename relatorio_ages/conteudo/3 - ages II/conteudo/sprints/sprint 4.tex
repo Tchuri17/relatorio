@@ -1,0 +1,16 @@
+\subsection{Sprint 4}
+
+Após nossa retrospectiva, iniciamos oficialmente a última sprint do projeto. Decidimos incluir algumas tarefas extras, como cadastro em lotes, auditoria de ações do sistema e a resolução de débitos técnicos das sprints passadas. Em geral, esses débitos eram pequenos ajustes, ao invés de features quebradas ou não implementadas. Foi uma ótima ideia deixar essas tarefas mais tranquilas para a última sprint, pois geralmente é a que tem menos participação do time devido ao acúmulo de provas e trabalhos de outras disciplinas no final do semestre.
+
+Como o time de backend pegou todas as tarefas principais, foquei nos débitos técnicos das sprints passadas. Escolhi uma tarefa que consistia em tornar assíncronas as operações de cadastro e remoção de certificados da aplicação. Esse débito técnico surgiu devido ao tempo necessário para realizar essas operações na blockchain, que pode levar cerca de 15 segundos cada. Até o momento, nossa lógica na blockchain era puramente sequencial, o que significava que, se uma operação de remoção ou adição de certificado fosse iniciada, a aplicação inteira ficaria travada por 15 segundos.
+
+Para resolver esse problema, comecei a reestruturar o código para suportar operações assíncronas. Utilizei bibliotecas padrão do SpringBoot para garantir que as operações de cadastro e remoção pudessem ser realizadas em segundo plano, sem bloquear o funcionamento geral da aplicação. Isso envolveu a implementação de eventListeners e eventPublishers para gerenciar as respostas das operações na blockchain, além de ajustar a lógica de controle de fluxo para que a aplicação pudesse continuar respondendo a outras requisições enquanto aguardava a conclusão das operações na blockchain.
+
+Após implementar essas mudanças, realizei testes para assegurar que as operações assíncronas estavam funcionando corretamente e que a aplicação não ficava mais travada durante as interações com a blockchain. 
+
+Após essa task não contribuí mais para o projeto, usando o tempo livre que eu tinha para, além de terminar o relatório final, concluir longos trabalhos e estudar para provas. Imagino que meus colegas tenham passado pela mesma situação que eu mas apesar disso, conseguimos entregar tudo o que nos propormos a fazer.
+
+Nossa última sprint terminou em uma reunião final com o Edimar, nosso stakeholder, que desta vez estava fisicamente presente para ver todo o trabalho que realizamos ao longo do projeto. Durante a reunião, apresentamos não apenas as funcionalidades implementadas nesta sprint, mas também uma visão geral de toda a aplicação. Para a alegria de todos, Edimar ficou satisfeito com o resultado e aceitou o produto.
+
+Encerrar a última sprint do projeto foi algo satisfatório, especialmente considerando os desafios adicionais de fim de semestre. A decisão de focar em débitos técnicos leves, como a implementação de operações assíncronas para melhorar a performance com a blockchain, foi muito bem pensada e contribuiu para a responsividade da aplicação. A apresentação final ao stakeholder, que recebeu feedback positivo, mostrou o sucesso do planejamento e execução do time. Sinto que esta experiência contribui e muito para a minha evolução como programador me dando ainda mais confiança para trabalhar em um ambiente de desenvolvimento web.
+

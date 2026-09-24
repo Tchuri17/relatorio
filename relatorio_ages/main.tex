@@ -1,0 +1,293 @@
+﻿% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %
+% Template criado por @Guvidaletti    %
+% Utilizando o template da AGES v2.1  %
+% como base                           %
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %
+
+% Configuração do Documento
+\documentclass[
+  a4paper,
+  12pt,
+  oneside,
+  chapter=TITLE,
+  english,
+  brazil]
+  {abntex2}
+
+\usepackage[brazil]{babel}
+
+\usepackage[
+  tmargin=3cm,
+  lmargin=3cm,
+  bmargin=2cm,
+  rmargin=2cm,
+]{geometry}
+
+
+% Para utilizar imagens dentro do LaTeX:
+\usepackage{graphicx}
+
+% \usepackage{lmodern}			% Usa a fonte Latin Modern
+\usepackage{helvet}             % Usa a fonte Helvetica
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+
+% Para utilizar fontes diferentes:
+\input{util/style.tex}
+
+% Para a lista de abreviaturas:
+\usepackage[printonlyused,withpage]{acronym}
+
+% Se o style=abnt não funcionar, utilize o style=numeric
+\usepackage[style=abnt]{biblatex}
+\usepackage{csquotes}
+\addbibresource{bibliografia/bibliografia.bib}
+
+% Ajuste de ordenação dos arquivos:
+\begin{document}
+  \include{conteudo/0 - pre/0.1 - capa}
+  % Opcional:
+  
+
+  % Contagem de páginas começa aqui:
+  \textual{}
+  % ajuste pare remover cabeçalho:
+  % verificar se não é melhor com
+  \pagestyle{simple}
+
+  % Capitulos
+ 
+  \include{conteudo/2 - ages I/index}
+  \include{conteudo/3 - ages II/index}
+
+
+
+\chapter{AGES III --- VínculoHub Portal: Plataforma de Gestão e Conexão para Organizações Sociais}
+
+\section{Introdução}
+
+Na AGES III, sob orientação do professor Azriel Majdenbaum, optei por participar de um projeto com proposta tecnicamente mais objetiva quando comparado ao projeto anterior, porém com elevado impacto social e grande potencial de aplicação prática. O projeto escolhido foi o \textbf{VínculoHub Portal}, uma plataforma digital voltada à conexão entre organizações sociais e empresas interessadas em investir em iniciativas com foco social e critérios ESG.
+
+A proposta do sistema consistia em oferecer um ambiente centralizado no qual ONGs pudessem estruturar sua presença institucional, cadastrar projetos, organizar documentos e obter maior visibilidade perante potenciais parceiros. Paralelamente, empresas poderiam localizar projetos alinhados aos seus interesses estratégicos, analisar indicadores e estabelecer vínculos institucionais de forma segura e organizada.
+
+A escolha deste projeto também foi motivada pelo momento profissional em que me encontrava. Durante esta AGES, eu já atuava no mercado como desenvolvedor de software, o que me permitiu contribuir com maior maturidade técnica, visão prática de produto e melhor entendimento de fluxos comuns em ambientes corporativos de desenvolvimento.
+
+Desde os primeiros encontros, percebi que o projeto possuía uma proposta diferenciada, pois unia tecnologia, organização institucional e impacto social. Além disso, havia espaço para aplicação de conhecimentos em frontend, backend, autenticação, modelagem de banco de dados, experiência do usuário e organização ágil de equipes.
+
+\section{Desenvolvimento do Projeto}
+
+\subsection{Repositório do Código Fonte do Projeto}
+
+O projeto \textbf{VínculoHub Portal} foi organizado em um repositório principal no GitHub, contendo as aplicações de frontend e backend, a documentação técnica, os arquivos de infraestrutura e os scripts de apoio ao desenvolvimento.
+
+\begin{itemize}
+\item Repositório principal: \url{https://github.com/VinculoHub-Portal/VinculoHubPortal}
+\end{itemize}
+
+A estrutura do repositório foi dividida principalmente entre as pastas \texttt{frontend}, \texttt{backend} e \texttt{docs}. A pasta \texttt{frontend} concentrou a aplicação web utilizada pelos diferentes perfis de usuário. A pasta \texttt{backend} reuniu a API, as regras de negócio, a integração com banco de dados, autenticação, documentos e serviços externos. A pasta \texttt{docs} foi utilizada para registrar materiais de apoio, validações de sprint, tarefas refinadas e a modelagem do banco de dados.
+
+Além disso, o projeto possui arquivos de orquestração e infraestrutura, como \texttt{docker-compose.yml}, \texttt{docker-compose.dev.yml}, \texttt{docker-compose.swarm.yml} e \texttt{main.tf}, evidenciando uma preocupação com padronização de ambiente, execução local e preparação para deploy em nuvem.
+
+\subsection{Banco de Dados Utilizado}
+
+O banco de dados utilizado no projeto foi o \textbf{PostgreSQL}. A aplicação também utilizou \textbf{Flyway} para versionamento e execução das migrações do banco, permitindo que a estrutura fosse reproduzida de forma consistente nos ambientes de desenvolvimento e deploy.
+
+A modelagem do banco foi documentada em formato DBML no arquivo \texttt{docs/db/vinculo\_hub.dbml}. Entre as principais entidades modeladas estão usuários, ONGs, empresas, projetos, documentos, editais, ODS, endereços, denúncias e vínculos entre empresas e projetos.
+
+\begin{figure}[H]
+    \centering
+    \small
+    \caption{Modelagem do banco de dados do VínculoHub Portal}
+    \includegraphics[width=1\linewidth]{conteudo/4 - ages III/conteudo/figures/banco-dados-vinculohub.png}
+    Fonte: Documentação do projeto VínculoHub Portal
+    \label{fig:vinculohub-banco-dados}
+\end{figure}
+
+A entidade \texttt{users} armazena os dados básicos do usuário e mantém integração com o Auth0 por meio do campo \texttt{auth0\_id}. As entidades \texttt{npo} e \texttt{company} representam, respectivamente, ONGs e empresas cadastradas na plataforma. A entidade \texttt{project} centraliza os projetos cadastrados pelas ONGs, enquanto \texttt{document} armazena metadados de arquivos vinculados a ONGs ou projetos. A tabela \texttt{company\_project} representa os vínculos entre empresas e projetos, com status como pendente, em negociação, ativo ou inativo.
+
+\subsection{Arquitetura Utilizada}
+
+A arquitetura do projeto foi baseada em uma aplicação web separada em frontend, backend, banco de dados e serviços externos. O frontend se comunica com o backend por meio de API REST. O backend centraliza as regras de negócio, validações, persistência dos dados, segurança e integrações externas. O banco PostgreSQL armazena os dados relacionais da aplicação.
+
+A autenticação e autorização foram integradas ao \textbf{Auth0}, com separação de perfis por roles, como \texttt{COMPANY}, \texttt{NPO} e \texttt{ADMIN}. Essa separação permitiu controlar o acesso às rotas e funcionalidades específicas de empresas, ONGs e administradores.
+
+O projeto também utilizou \textbf{Docker Compose} para execução local dos serviços, incluindo backend, frontend, banco PostgreSQL e Flyway. Para armazenamento de arquivos, como documentos e editais, foi prevista integração com \textbf{AWS S3}. A documentação e os arquivos de infraestrutura também indicam uma organização voltada a deploy em ambiente AWS, com uso de EC2, Docker Swarm, Elastic Block Storage e bucket S3.
+
+\begin{figure}[H]
+    \centering
+    \small
+    \caption{Arquitetura de infraestrutura do VínculoHub Portal}
+    \includegraphics[width=1\linewidth]{conteudo/4 - ages III/conteudo/figures/arquitetura-vinculohub.jpeg}
+    Fonte: Documentação do projeto VínculoHub Portal
+    \label{fig:vinculohub-arquitetura}
+\end{figure}
+
+Essa arquitetura permitiu organizar ambientes de desenvolvimento e produção, padronizar a execução dos serviços e separar responsabilidades entre interface, API, banco de dados, autenticação e armazenamento de arquivos.
+
+\subsection{Protótipos das Telas Desenvolvidas}
+
+Durante o desenvolvimento do VínculoHub Portal, os protótipos e fluxos de tela serviram como base para a construção das principais experiências da aplicação. Entre os fluxos contemplados estavam o cadastro de ONGs, cadastro de empresas, dashboards por perfil, mural de editais, perfil público de ONGs, perfil público de empresas, cadastro e edição de projetos, upload de documentos, denúncias e gestão de vínculos.
+
+No frontend, esses fluxos foram implementados em páginas e componentes específicos, como \texttt{AdminDashboard}, \texttt{CompanyDashboard}, \texttt{OngProfilePage}, \texttt{OngPublicProfilePage}, \texttt{ProjectDetailsPage}, \texttt{EditaisMuralPage}, \texttt{MyRelationshipsPage} e páginas administrativas para ONGs, vínculos e notificações.
+
+\subsection{Tecnologias Utilizadas}
+
+No frontend, o projeto utilizou \textbf{React}, \textbf{TypeScript} e \textbf{Vite} como base da aplicação web. Também foram utilizadas bibliotecas como \textbf{Material UI}, \textbf{Tailwind CSS}, \textbf{React Router}, \textbf{React Query}, \textbf{Axios} e \textbf{Auth0 React SDK}. Para testes e qualidade do frontend, foram utilizados \textbf{Vitest}, \textbf{Testing Library} e \textbf{Playwright}.
+
+No backend, a aplicação foi construída com \textbf{Java 17} e \textbf{Spring Boot}. A stack incluiu Spring Web, Spring Data JPA, Spring Security, OAuth2 Resource Server, validação, PostgreSQL, Flyway, Swagger/OpenAPI, AWS SDK para S3, Lombok, JUnit, Testcontainers e JaCoCo.
+
+A infraestrutura local foi padronizada com \textbf{Docker} e \textbf{Docker Compose}, permitindo subir frontend, backend, banco de dados e migrações com menor esforço de configuração. Também foram utilizados hooks de Git, Spotless, PMD e SpotBugs como mecanismos de apoio à padronização e qualidade do código.
+
+Entre as funcionalidades técnicas mais relevantes da stack estão: autenticação com Auth0, autorização por roles, upload de arquivos para S3, migrações versionadas com Flyway, documentação de API com Swagger, testes automatizados, cenários E2E com Playwright e endpoints REST para dashboards, projetos, editais, documentos, denúncias e vínculos.
+
+\section{Atividades Desempenhadas pelo Aluno}
+
+\subsection{Sprint 0}
+
+A Sprint 0 teve papel decisivo para o sucesso inicial do projeto, pois concentrou toda a etapa de estruturação conceitual, definição visual e preparação organizacional da equipe. Diferentemente de fases iniciais em que normalmente há menor intensidade técnica, nesta oportunidade o volume de trabalho foi elevado desde os primeiros encontros, especialmente pela necessidade de transformar uma ideia ampla em um produto viável e bem organizado.
+
+Minha atuação concentrou-se principalmente na frente de produto, experiência do usuário e organização das entregas. Auxiliei diretamente colegas da AGES I no desenvolvimento dos mockups, esclarecendo dúvidas sobre boas práticas de interface, padronização visual e coerência entre telas. Busquei contribuir não apenas executando tarefas, mas também orientando membros menos experientes, compartilhando conhecimentos adquiridos em experiências anteriores e no ambiente profissional.
+
+Participei ativamente da definição dos fluxos centrais da aplicação. Como o sistema possuía múltiplos perfis de usuários --- ONGs, empresas investidoras e administradores --- foi necessário pensar cuidadosamente na jornada de cada tipo de usuário dentro da plataforma. Assim, colaborei na concepção lógica dos seguintes fluxos:
+
+\begin{itemize}
+\item cadastro institucional de ONGs;
+\item cadastro empresarial;
+\item portal administrativo;
+\item listagem e gerenciamento de projetos;
+\item sistema de vínculos entre organizações e empresas;
+\item mural de editais;
+\item denúncias de irregularidades;
+\item edição de perfis institucionais;
+\item visualização pública e privada de perfis.
+\end{itemize}
+
+Além disso, realizei benchmarking de plataformas já consolidadas no mercado, analisando soluções semelhantes para identificar padrões modernos de navegação, layout, onboarding e dashboards. Essa etapa foi importante para evitar decisões arbitrárias e elevar o nível de maturidade visual do produto.
+
+Também participei da criação e refinamento de tarefas no Kanban, ajudando a transformar ideias amplas em demandas executáveis e priorizadas. Em diversos momentos, alinhei expectativas com colegas da AGES IV sobre escopo, prioridades e viabilidade de determinadas funcionalidades.
+
+Durante essa sprint, percebi claramente a importância da comunicação em projetos colaborativos. Como havia muitas ideias simultâneas e diferentes níveis de experiência entre os integrantes, nem sempre o fluxo de informação acontecia da melhor forma. Isso exigiu postura mais ativa da minha parte, buscando centralizar dúvidas, destravar tarefas e orientar colegas.
+
+Considero que a Sprint 0 foi extremamente produtiva para mim, pois atuei em áreas diversas: UX, produto, organização ágil e apoio técnico ao time. Também serviu para consolidar uma postura mais madura de liderança informal, auxiliando colegas e pensando no projeto de forma sistêmica, não apenas individual.
+
+\vspace{0.5cm}
+
+\subsection{Sprint 1}
+
+A Sprint 1 marcou a transição entre planejamento e execução prática do sistema. Após uma Sprint 0 focada em estruturação e prototipação, passamos a desenvolver funcionalidades reais que sustentariam o MVP da plataforma. Essa mudança exigiu adaptação rápida da equipe, maior disciplina técnica e integração constante entre frontend, backend e produto.
+
+Minha principal atuação nesta fase concentrou-se na camada de autenticação e controle de acesso da plataforma, considerada uma das fundações mais críticas do projeto. Como o sistema possuía múltiplos perfis de usuários com jornadas distintas, tornou-se essencial adotar uma solução segura e escalável desde o início.
+
+Iniciei estudando diferentes provedores de autenticação externa, entre eles Clerk, Firebase e Auth0. Analisei documentação, possibilidades de integração, curva de aprendizado e aderência ao nosso contexto. Após discussões internas, optamos pela utilização do \textbf{Auth0}, principalmente pela robustez da solução, flexibilidade de roles e facilidade de integração com aplicações modernas.
+
+Após a decisão técnica, passei a atuar diretamente na implementação inicial da solução, realizando atividades como:
+
+\begin{itemize}
+\item criação e configuração do tenant da aplicação;
+\item estruturação de roles para perfis distintos;
+\item definição do fluxo de login e pós-login;
+\item criação de usuários de teste;
+\item configuração de redirecionamentos por perfil;
+\item integração do frontend com autenticação externa;
+\item validação de tokens JWT no backend;
+\item sincronização entre usuários autenticados e banco de dados interno.
+\end{itemize}
+
+Também precisei adaptar o banco de dados para receber a nova arquitetura de autenticação. Para isso, participei da criação do campo \texttt{auth0\_id} na tabela de usuários, garantindo vínculo entre registros internos e identidades externas. Além disso, foram realizados ajustes de nomenclatura e padronização estrutural em tabelas já existentes.
+
+Paralelamente, participei da dinâmica interna dos squads criados para dividir responsabilidades. Essa organização foi positiva, pois aumentou foco e especialização, porém também revelou desafios relevantes de comunicação. Em determinados momentos percebi falta de alinhamento entre membros do meu squad, atrasos em entregas e tarefas sendo executadas muito próximas do prazo final.
+
+Essa situação me levou a um processo importante de autocrítica. Entendi que, mesmo não ocupando formalmente posição de liderança, eu poderia ter sido mais proativo na cobrança de alinhamentos, acompanhamento das tarefas e antecipação de riscos. Essa percepção foi extremamente valiosa, pois reforçou que times de software dependem fortemente de postura colaborativa e senso de responsabilidade coletiva.
+
+Apesar das dificuldades naturais da sprint, os principais objetivos estruturais foram alcançados, especialmente no que diz respeito à implementação da autenticação de usuários, definição das roles, integração entre frontend e backend e criação da base de controle de acesso da plataforma. Essas entregas foram fundamentais para sustentar a evolução do projeto nas etapas seguintes. No entanto, a Sprint 1 não terminou sem pendências.
+
+Um dos principais débitos técnicos deixados ao final desta sprint foi a não conclusão da tela de cadastro do primeiro projeto da ONG, funcionalidade que possuía grande relevância dentro do fluxo de onboarding da plataforma. Essa entrega era importante porque não se tratava apenas de mais uma tela isolada, mas de uma etapa central da proposta de valor do sistema: garantir que a ONG, ao finalizar seu cadastro, já inserisse pelo menos uma iniciativa real em seu portfólio. Em outras palavras, essa funcionalidade era essencial para que o sistema deixasse de ser apenas um ambiente de cadastro institucional e passasse a representar, de fato, um espaço de conexão orientado por projetos concretos.
+
+A ausência dessa entrega ao final da sprint revelou uma série de dificuldades que ultrapassavam a questão puramente técnica. Em primeiro lugar, ficou evidente que o time ainda apresentava limitações em comunicação, sincronização e planejamento. Em vários momentos, as tarefas foram conduzidas muito próximas do prazo final, o que reduziu o tempo disponível para revisão, padronização visual, validação de fluxos e correção de inconsistências. Isso fez com que algumas funcionalidades fossem entregues em estado satisfatório, enquanto outras, embora planejadas, não alcançassem maturidade suficiente para apresentação.
+
+No caso específico do cadastro do primeiro projeto, o problema não esteve apenas no volume de trabalho, mas também na dependência entre diferentes partes do sistema. Como essa funcionalidade se conectava diretamente ao onboarding da ONG, à lógica de persistência de projetos, ao fluxo de autenticação recém-implementado e à experiência visual do wizard, qualquer desalinhamento entre frontend, regras de negócio e integração acabava impactando sua conclusão. Ou seja, tratava-se de uma task aparentemente localizada, mas que na prática exigia coordenação entre múltiplas camadas do sistema. Isso evidenciou para mim como, em desenvolvimento de software, algumas funcionalidades acumulam um grau de complexidade invisível à primeira vista justamente por dependerem do bom funcionamento de várias partes anteriores.
+
+Esse débito técnico também gerou uma reflexão importante sobre o conceito de entrega em contexto acadêmico e em contexto profissional. Em um primeiro olhar, pode parecer frustrante encerrar a sprint sem concluir uma funcionalidade considerada central. Entretanto, com o avanço da minha experiência, venho entendendo que maturidade em desenvolvimento não significa necessariamente “entregar tudo a qualquer custo”, mas sim compreender o estado real do produto, reconhecer pendências com clareza e tomar decisões conscientes sobre o que é viável apresentar. Nesse sentido, a decisão de assumir o débito técnico e seguir com a sprint sem forçar uma entrega incompleta ou artificial foi, ao mesmo tempo, incômoda e valiosa. Incômoda porque naturalmente existe a expectativa de concluir tudo o que foi planejado; valiosa porque nos obrigou a enxergar o projeto com mais honestidade.
+
+Além disso, essa situação reforçou algo que considero cada vez mais importante: débitos técnicos raramente são culpa isolada de uma única pessoa. Eles costumam ser o resultado acumulado de pequenas falhas distribuídas, como comunicação insuficiente, falta de antecipação de riscos, baixa padronização, decisões tomadas tarde demais e dificuldade em priorizar corretamente. Essa percepção foi especialmente relevante para mim, porque me levou a refletir não apenas sobre a atuação do grupo, mas também sobre a minha própria postura durante a sprint. Embora eu tenha contribuído tecnicamente de forma significativa na base de autenticação e organização inicial da aplicação, percebi que poderia ter sido mais incisivo no acompanhamento de determinadas frentes, mais transparente na identificação antecipada de gargalos e mais proativo na coordenação do fluxo dentro do squad. Essa autocrítica foi importante porque me mostrou que experiência técnica, por si só, não resolve problemas de entrega se ela não vier acompanhada de comunicação clara e organização contínua.
+
+Outro ponto que essa pendência evidenciou foi a importância da padronização visual e funcional desde cedo. Como o projeto envolvia múltiplos fluxos de cadastro e diferentes perfis de usuário, qualquer inconsistência entre telas acabava se tornando mais perceptível e mais custosa de corrigir conforme o prazo se aproximava. A tela de cadastro do primeiro projeto, por estar inserida dentro de um fluxo wizard, exigia não apenas implementação, mas também coerência com o restante das etapas anteriores. A falta dessa consistência aumentou a dificuldade de fechamento da funcionalidade e mostrou ao time que prototipação e desenvolvimento não podem caminhar como frentes totalmente separadas: elas precisam manter diálogo constante ao longo da sprint.
+
+Do ponto de vista formativo, considero que esse débito técnico acabou sendo uma das experiências mais valiosas da Sprint 1. Isso porque ele nos obrigou a sair de uma lógica idealizada de planejamento e encarar os limites reais da execução. Aprendi que uma sprint não deve ser avaliada apenas pela quantidade de tarefas concluídas, mas também pela qualidade da reflexão gerada a partir do que não foi concluído. Em nosso caso, a pendência do cadastro do primeiro projeto serviu como alerta para a necessidade de melhorar divisão de responsabilidades, clareza de escopo, comunicação entre os membros e priorização de funcionalidades verdadeiramente críticas.
+
+Em retrospectiva, entendo que a Sprint 1 foi bem-sucedida em estabelecer a infraestrutura essencial do sistema, mas também foi decisiva por expor fragilidades de processo que precisavam ser enfrentadas antes que o projeto crescesse em complexidade. A não conclusão dessa tela mostrou que a base técnica pode até avançar rapidamente, mas a sustentação de um produto depende de alinhamento coletivo, previsibilidade e disciplina de execução. Essa foi uma lição importante para mim, tanto dentro da AGES quanto na minha formação como desenvolvedor: em software, tão importante quanto construir funcionalidades é saber reconhecer, documentar e aprender com aquilo que ainda não foi possível concluir.
+
+\subsection{Sprint 2}
+
+A Sprint 2 teve como foco avançar na experiência de uso dos dois perfis centrais da plataforma: ONGs e empresas. As atividades previstas estavam concentradas principalmente no frontend, com a entrega da visualização principal dos projetos da ONG e a construção da vitrine de busca e modalidades de investimento para empresas. A primeira frente tinha como objetivo permitir que a ONG acompanhasse rapidamente seus projetos, visualizando informações relevantes sem precisar navegar por fluxos excessivamente longos. A segunda frente buscava melhorar a descoberta de oportunidades por parte das empresas, aproximando-as de projetos alinhados aos seus interesses.
+
+Todas as atividades previstas para a sprint foram concluídas. Do ponto de vista do produto, essa etapa foi importante porque começou a tornar a plataforma mais utilizável para os perfis finais. Até então, boa parte do esforço estava concentrada na estruturação da base do sistema, autenticação, modelagem e fluxos iniciais. Na Sprint 2, o projeto passou a ganhar mais corpo visual e funcional, especialmente na experiência de navegação das ONGs e das empresas.
+
+Minha atuação esteve relacionada ao acompanhamento das demandas do squad, ao entendimento das entregas previstas e ao apoio na organização das atividades de frontend. Como eu já possuía mais experiência do que em AGES anteriores, passei a perceber com mais clareza os impactos de uma user story mal definida ou de uma divisão de responsabilidades pouco explícita. Esse foi justamente um dos principais problemas encontrados durante a sprint.
+
+A maior dificuldade foi a falta de clareza nas user stories e nas funções de cada squad. No início, entendíamos que o nosso squad, chamado de User Experience, teria como responsabilidade principal concluir tarefas relacionadas ao frontend. Entretanto, ao longo da sprint, ficou claro que a expectativa não era apenas implementar telas, mas também pensar fluxo, experiência, coerência do produto, alinhamento com regras de negócio e comunicação com outros squads. Essa diferença de entendimento gerou ruídos, pois algumas tarefas pareciam pertencer a uma frente, mas dependiam diretamente de decisões ou entregas de outra.
+
+Esse problema evidenciou uma fragilidade importante na comunicação entre AGES III e AGES IV. Como os integrantes da AGES III estavam em posição de maior responsabilidade na gestão dos squads, era esperado que tivéssemos uma postura mais ativa na interpretação das demandas, na divisão das tarefas e na comunicação com os demais membros. No entanto, percebi que ainda havia dificuldade em transformar decisões de alto nível em tarefas claras para execução.
+
+A principal lição aprendida foi que a comunicação entre AGES III e AGES IV precisava melhorar, especialmente porque os AGES III estavam cada vez mais envolvidos na gestão dos squads. Liderar tecnicamente ou organizar um grupo não significa apenas distribuir tarefas, mas garantir que todos entendam o propósito da entrega, os critérios de aceite e as dependências envolvidas. Quando esse alinhamento não acontece, mesmo tarefas aparentemente simples podem gerar retrabalho ou insegurança na equipe.
+
+Como próximo passo, entendi que seria necessário desenvolver o projeto de forma mais próxima dos AGES IV, buscando validar expectativas com antecedência e reduzir ambiguidades. Essa sprint reforçou que, em projetos colaborativos, a qualidade da entrega depende tanto da implementação quanto da clareza do processo que leva até ela.
+\subsection{Sprint 3}
+
+A Sprint 3 concentrou um conjunto mais amplo de funcionalidades e melhorias na plataforma. As atividades previstas incluíam o aprimoramento da tela de detalhe dos projetos, o dashboard de indicadores de impacto da ONG, a edição de projetos, a user story de visibilidade e acesso ao perfil da ONG, além do upload e visualização de documentos institucionais. Todas as atividades previstas foram concluídas, o que representou um avanço importante na maturidade do produto.
+
+Essa sprint exigiu maior articulação entre frontend, backend, validações de negócio e experiência do usuário. Diferentemente de tarefas isoladas de interface, as funcionalidades previstas dependiam de dados reais, regras de acesso, integração com autenticação e comportamento coerente entre diferentes páginas. Por isso, minha atuação foi se deslocando cada vez mais para atividades de análise, apoio técnico, revisão e organização do trabalho do squad.
+
+No início da sprint, dediquei tempo ao estudo do estado atual do backend e à criação de subtasks referentes a essa camada. Esse trabalho foi importante para transformar demandas amplas em tarefas menores e mais executáveis. Também participei de weeklys e sugeri a criação de uma nova tabela no banco de dados, a partir das necessidades percebidas durante o desenvolvimento. Além disso, revisei pull requests relacionados à edição de ONGs, alinhei decisões com integrantes da AGES III do squad e busquei entender melhor a construção dos processos de tratamento e processamento de documentos no backend.
+
+Uma das atividades mais relevantes foi auxiliar um colega do squad na configuração da geração de tokens do Auth0 no Postman. Esse tipo de apoio foi importante porque a autenticação era uma parte central do projeto e, sem conseguir simular corretamente os perfis e permissões, o desenvolvimento e os testes ficavam travados. Esse momento reforçou a importância de dominar não apenas o código da funcionalidade, mas também o ambiente necessário para que os colegas consigam trabalhar.
+
+Mais adiante, atuei na revisão de pull requests, no apoio a colegas com erros e na implementação da user story de listagem e download de documentos. Essa funcionalidade dialogava diretamente com uma necessidade importante das ONGs: armazenar e disponibilizar documentos institucionais de forma organizada e segura. Ao trabalhar nessa frente, precisei considerar aspectos de frontend, endpoints, permissões e experiência de uso, principalmente para garantir que os documentos fossem exibidos de forma compreensível e pudessem ser acessados quando necessário.
+
+Apesar das entregas terem sido concluídas, o principal problema encontrado foi a gestão de pessoas. A sprint deixou claro que, conforme o projeto cresce, o desafio deixa de ser apenas técnico. A coordenação entre pessoas, expectativas, ritmos de trabalho e responsabilidades passa a ocupar um papel central. Em alguns momentos, percebi dificuldade em manter todos alinhados, tanto dentro do squad quanto com pessoas de fora dele.
+
+A principal lição aprendida foi a necessidade de melhorar o canal de comunicação entre os membros do squad e também com outros squads. A falta de comunicação clara não gera apenas atraso; ela cria insegurança, sobreposição de tarefas e perda de contexto. Para um projeto com múltiplos perfis, muitas funcionalidades e diferentes níveis de experiência entre os integrantes, esse alinhamento precisa ser constante.
+
+Ao final da sprint, o squad ficou com tarefas de refatoração e limpeza do código. Esse próximo passo foi importante porque, após várias entregas funcionais, tornou-se necessário melhorar a organização interna da aplicação, reduzir inconsistências e preparar o projeto para as etapas finais. Para mim, a Sprint 3 foi uma fase de aprendizado mais voltada à sustentação de um projeto em crescimento, especialmente na relação entre apoio técnico, revisão de código, comunicação e gestão de pessoas.
+\subsection{Sprint 4}
+
+A Sprint 4 representou a etapa final de consolidação do projeto. As atividades previstas envolviam o card de projetos apoiados no dashboard da empresa, a criação da tela de notificações no painel dos administradores, a criação do perfil da empresa e a remoção dos mocks restantes do CompanyDashboard. Todas as atividades previstas foram concluídas, o que ajudou a aproximar o sistema de um estado mais consistente para apresentação e validação final.
+
+Nesta sprint, minha atuação esteve bastante relacionada a revisão, planejamento e implementação de ajustes no painel administrativo. Participei da contabilização das horas da weekly de sábado, revisei pull requests e ajudei colegas com erros encontrados durante o desenvolvimento. Também trabalhei no planejamento e implementação de um débito técnico no painel dos administradores, buscando reduzir inconsistências e tornar essa área mais coerente com as funcionalidades reais do sistema.
+
+Uma das principais frentes em que atuei foi a criação do planejamento de implementação da listagem de notificações no painel de admin. Para isso, realizei uma varredura do painel administrativo, listei inconsistências de design, participei da weekly e alinhei decisões com integrantes da AGES III e IV. Em seguida, contribui para a implementação da listagem de notificações, conectando essa necessidade ao fluxo de mediação e acompanhamento de vínculos dentro da plataforma.
+
+A sprint também envolveu melhorias importantes no dashboard da empresa. A remoção de mocks restantes do CompanyDashboard foi relevante porque aproximou a aplicação de um comportamento real, baseado em dados do backend. O card de projetos apoiados também contribuiu para tornar a experiência da empresa mais útil, permitindo visualizar de forma mais direta os projetos vinculados e a divisão entre modalidades de investimento.
+
+Apesar das entregas concluídas, o maior problema encontrado foi a falta de motivação e engajamento da equipe de desenvolvimento. Ao final do projeto, ficou perceptível que parte do time já demonstrava menor energia para continuar evoluindo a aplicação. Esse desgaste pode ser explicado por diversos fatores, como fim de semestre, acúmulo de demandas, complexidade do projeto e perda gradual de interesse pelo produto.
+
+No meu caso, essa sprint também evidenciou uma redução da minha própria presença no projeto. Eu ainda contribuía por meio de revisão, planejamento, apoio e implementação pontual, mas já não tinha o mesmo nível de envolvimento das fases iniciais. Essa redução não ocorreu por uma dificuldade técnica específica, mas por uma combinação de menor interesse pessoal pelo business do projeto e pela sensação de que eu já não estava aprendendo tantas coisas novas quanto em experiências anteriores.
+
+A principal lição aprendida foi que a escolha de projetos deve considerar também preferências pessoais e interesse pelo domínio de negócio. Durante muito tempo, eu avaliei projetos principalmente pela stack ou pelo desafio técnico. No entanto, a Sprint 4 deixou claro que o business precisa despertar algum nível de curiosidade nos desenvolvedores, principalmente quando o projeto entra em fases menos empolgantes, como ajustes, revisões e correções. Quando não existe conexão com o problema que está sendo resolvido, manter o engajamento se torna mais difícil.
+
+Como próximos passos, o projeto ainda demandava ajustes no deploy da aplicação. A infraestrutura já possuía uma base organizada, com Docker, AWS e separação de ambientes, mas ainda havia necessidade de estabilizar e ajustar pontos finais para garantir uma entrega mais confiável. Para mim, essa sprint encerrou a AGES III com uma reflexão importante: maturidade técnica não depende apenas de saber implementar, mas também de entender quais tipos de problema realmente despertam interesse e sustentam participação ao longo do tempo.
+\section[Conclusão]{Conclusão}
+
+A AGES III foi uma experiência diferente das anteriores porque ocorreu em um momento em que eu já possuía mais maturidade técnica e experiência prática no mercado de software. Isso mudou a forma como enxerguei o projeto. Em vez de atuar apenas como alguém que estava aprendendo tecnologias novas, passei a perceber com mais clareza problemas de organização, comunicação, definição de escopo, gestão de pessoas e alinhamento entre squads.
+
+No início do projeto, minha participação foi mais intensa. A proposta do VínculoHub Portal envolvia múltiplos perfis de usuário, autenticação, banco de dados, dashboards, documentos, editais, vínculos e uma arquitetura mais robusta. Esses elementos criaram oportunidades reais de contribuição, principalmente em decisões de produto, experiência do usuário, autenticação, organização de tarefas e apoio a colegas menos experientes. Nesse momento, senti que minha experiência anterior ajudava a dar mais segurança para o time.
+
+Ao longo das sprints, entretanto, percebi uma redução gradual da minha presença e do meu engajamento no projeto. Essa mudança não esteve relacionada a uma dificuldade técnica específica, mas a uma combinação de fatores ligados ao meu interesse pelo produto e ao tipo de aprendizado que o projeto passou a oferecer. Nas primeiras etapas, havia desafios claros de estruturação, autenticação, organização de squads, definição de fluxos e apoio técnico. Com o avanço do semestre, muitas tarefas passaram a se concentrar em ajustes, refinamentos, revisão de pull requests, correções e sustentação de funcionalidades já encaminhadas.
+
+Essa mudança me levou a uma autocrítica importante. Embora eu reconheça a relevância social da proposta do VínculoHub Portal, o domínio de negócio do projeto não despertava tanto interesse pessoal em mim. O business da plataforma, voltado à conexão entre organizações sociais e empresas, possui valor e impacto, mas não era um tema que me motivava profundamente. Como consequência, quando o projeto deixou de oferecer tantos aprendizados técnicos novos, ficou mais difícil sustentar o mesmo nível de presença e energia.
+
+Essa percepção foi uma das lições mais relevantes da AGES III. Passei a entender que, em projetos de software, o interesse pelo domínio de negócio influencia muito mais a qualidade da participação do que eu imaginava. Quando o desenvolvedor se conecta com o problema que está sendo resolvido, tende a propor melhorias com mais naturalidade, tomar decisões melhores e manter o engajamento mesmo em fases menos interessantes do desenvolvimento. Quando essa conexão não existe, a atuação pode se tornar mais mecânica, ainda que exista capacidade técnica para contribuir.
+
+Esse aprendizado se torna ainda mais importante no contexto atual de disseminação do uso de agentes e ferramentas de inteligência artificial no desenvolvimento de software. À medida que essas ferramentas passam a automatizar partes cada vez maiores da implementação, escrever código tende a deixar de ser o principal diferencial isolado do desenvolvedor. O entendimento do problema, do usuário, do contexto de negócio e das decisões de produto passa a ganhar mais importância. Saber o que construir, por que construir e como aquilo gera valor se torna tão importante quanto saber implementar.
+
+Nesse sentido, a AGES III me mostrou que a escolha de um projeto não deve considerar apenas a stack técnica ou a oportunidade de praticar ferramentas específicas. É necessário avaliar também o quanto o problema de negócio desperta curiosidade e vontade de aprofundamento. Em um cenário em que agentes podem acelerar a produção de código, o envolvimento crítico com o business se torna um fator central para diferenciar uma entrega tecnicamente funcional de uma solução realmente relevante.
+
+Do ponto de vista técnico, considero que o projeto contribuiu para consolidar conhecimentos em autenticação, integração entre frontend e backend, organização de banco de dados, revisão de código, testes, documentação e infraestrutura. Também tive contato com práticas importantes de qualidade, como uso de Docker, Flyway, Auth0, Swagger, testes automatizados e validações de sprint. Mesmo quando minha atuação se tornou menos intensa, ainda participei de revisões, planejamento de tarefas, apoio a colegas e implementação de funcionalidades específicas.
+
+Do ponto de vista de soft skills, a maior lição foi sobre comunicação e gestão de pessoas. Em várias sprints, ficou claro que o maior risco não estava apenas na complexidade técnica, mas na dificuldade de alinhar expectativas entre AGES III, AGES IV e os demais membros dos squads. User stories pouco claras, responsabilidades ambíguas e canais de comunicação frágeis geraram ruídos que poderiam ter sido reduzidos com uma gestão mais presente e objetiva.
+
+Concluo a AGES III com uma visão mais madura sobre desenvolvimento de software. A experiência não foi apenas sobre construir uma plataforma, mas sobre compreender melhor meus próprios critérios de motivação, meus limites de engajamento e a importância crescente do domínio de negócio na profissão. Tecnicamente, o projeto foi relevante; pessoalmente, ele foi ainda mais importante por me mostrar que escolher bem o problema a ser resolvido é parte essencial da construção de uma carreira sustentável em software.
+
+\include{conteudo/5 - ages IV/index}
+
+\end{document}
+
