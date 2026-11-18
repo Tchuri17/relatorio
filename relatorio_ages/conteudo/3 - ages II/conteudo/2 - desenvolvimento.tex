@@ -14,16 +14,36 @@
   Nosso projeto foi dividido em cinco repositórios diferentes. O primeiro e padrão da Wiki, o segundo do backend, o terceiro ao frontend , o quarto a API do contrato da nossa aplicação na etherium e por ultimo a "ponte" que liga a blockchain a nossa aplicação backend.
 
 \subsection{Banco de Dados Utilizado}
- https://tools.ages.pucrs.br/planline/wiki/-/wikis/banco\_dados
+ \href{https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-wiki/-/wikis/Banco-de-Dados}{Documentação do banco de dados na wiki do projeto.}
 
  Para a nossa aplicação usamos o banco de dados relacional Postgrees. Para ele criamos quatro entidades, Certificado, Empresa, Usuário e Permissão. Além dos relcionamentos básicos de conexão entre as entidades criamos um levando em consideração a geração de logs. Além do Postgrees usamos o firebase para a autenticação de usuários.
 \sloppy
+O modelo lógico apresentado na Figura~\ref{fig:blockchain-banco-dados} detalha a organização das tabelas e de seus relacionamentos. Esse artefato complementa o relato sobre a modelagem realizada com meu colega e ajuda a explicar a associação entre empresas, usuários, permissões e certificados.
+
+\begin{figure}[H]
+    \centering
+    \caption{Modelo lógico do banco de dados do projeto Certificação por meio de Blockchain}
+    \label{fig:blockchain-banco-dados}
+    \includegraphics[width=\linewidth,height=0.53\textheight,keepaspectratio]{conteudo/3 - ages II/conteudo/figures/banco-dados-blockchain.png}
+    \legend{Fonte: \href{https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-wiki/-/wikis/Banco-de-Dados}{wiki do projeto Certificação por meio de Blockchain}.}
+\end{figure}
+
 \subsection{Arquitetura Utilizada}
  https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-wiki/-/wikis/arquitetura
 
  https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-wiki/-/wikis/infraestrutura
 
  Para nossa arquitetura, organizamos o sistema em três camadas distintas: o backend, o frontend e a blockchain. A interação entre o frontend e a blockchain ocorria exclusivamente através do backend. Isso significa que todas as requisições e operações realizadas pelo frontend relacionadas à blockchain passavam primeiro pelo backend, que atuava como intermediário. Essa abordagem permitiu maior controle, segurança e facilita a integração entre as diferentes partes do sistema, garantindo que as operações na blockchain sejam realizadas de maneira eficiente e segura, sem expor diretamente o frontend à complexidade da infraestrutura blockchain.
+
+A Figura~\ref{fig:blockchain-arquitetura} apresenta os componentes da solução, identificada como AuthLink na documentação. A separação entre interface, API, banco de dados e blockchain evidencia o papel do backend na intermediação das operações solicitadas pelos usuários.
+
+\begin{figure}[H]
+    \centering
+    \caption{Diagrama de componentes do AuthLink}
+    \label{fig:blockchain-arquitetura}
+    \includegraphics[width=0.85\linewidth,height=0.49\textheight,keepaspectratio]{conteudo/3 - ages II/conteudo/figures/arquitetura-blockchain.png}
+    \legend{Fonte: \href{https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-wiki/-/wikis/arquitetura}{wiki do projeto Certificação por meio de Blockchain}.}
+\end{figure}
 
 \subsection{Protótipos das Telas Desenvolvidas}
 \sloppy
