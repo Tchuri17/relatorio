@@ -1,5 +1,7 @@
 \subsection{Sprint 4}
 
+A Sprint 4 foi encerrada em 5 de julho de 2024, conforme o relatório da etapa final. O escopo incluía a resolução de débitos técnicos, a geração de logs pela aplicação e o cadastramento de certificados em lotes. O relatório registra a conclusão das atividades previstas e aponta como principal dificuldade a paralelização das operações de cadastramento de certificados.
+
 Após nossa retrospectiva, iniciamos oficialmente a última sprint do projeto. Decidimos incluir algumas tarefas extras, como cadastro em lotes, auditoria de ações do sistema e a resolução de débitos técnicos das sprints passadas. Em geral, esses débitos eram pequenos ajustes, ao invés de features quebradas ou não implementadas. Foi uma ótima ideia deixar essas tarefas mais tranquilas para a última sprint, pois geralmente é a que tem menos participação do time devido ao acúmulo de provas e trabalhos de outras disciplinas no final do semestre.
 
 Como o time de backend pegou todas as tarefas principais, foquei nos débitos técnicos das sprints passadas. Escolhi uma tarefa que consistia em tornar assíncronas as operações de cadastro e remoção de certificados da aplicação. Esse débito técnico surgiu devido ao tempo necessário para realizar essas operações na blockchain, que pode levar cerca de 15 segundos cada. Até o momento, nossa lógica na blockchain era puramente sequencial, o que significava que, se uma operação de remoção ou adição de certificado fosse iniciada, a aplicação inteira ficaria travada por 15 segundos.

@@ -1,0 +1,766 @@
+{
+  "consulted_on": "2026-11-18",
+  "documents": [
+    {
+      "file": "C:\\Users\\Arthur\\Downloads\\ReadRace Sprint 4 - Entrega Final com GIFs (1).pptx",
+      "sha256": "3dbe0b7be67a8def4e188d5485227b1d51ece25a97a6aa43ffbfc5bf205fb322",
+      "slides": [
+        {
+          "number": 1,
+          "text": [
+            "ENTREGA FINAL",
+            "Sprint 4",
+            "READRACE   /   SPRINT 4   /   2026–2",
+            "01",
+            "READRACE",
+            "Ler. Evoluir. Compartilhar.",
+            "Demonstração do produto • Remap de UI/UX",
+            "Encerramento do projeto"
+          ],
+          "notes": [
+            "Abrir como entrega final do semestre. A narrativa reúne a experiência entregue ao leitor, as melhorias de interface e o encerramento do projeto. Premissa expressa do solicitante: todas as issues do GitHub são consideradas fechadas. Isso orienta a apresentação e não representa uma alteração no board.",
+            "Fontes: PPTX de referência; issues #195, #196, #229, #230 e #240."
+          ]
+        },
+        {
+          "number": 2,
+          "text": [
+            "ABERTURA",
+            "Uma sprint para fechar a experiência",
+            "Da lista de funcionalidades à jornada completa de quem usa o ReadRace.",
+            "READRACE   /   SPRINT 4   /   2026–2",
+            "02",
+            "01",
+            "Demonstrar o produto",
+            "Encontrar um livro, registrar leitura, evoluir e participar.",
+            "02",
+            "Remap de UI/UX",
+            "Tornar a leitura atual, as ações e a navegação mais claras.",
+            "03",
+            "Encerrar o projeto",
+            "Consolidar escopo, qualidade, operação e conhecimento.",
+            "Todas as issues consideradas concluídas para esta apresentação."
+          ],
+          "notes": [
+            "A sprint 4 tem natureza de fechamento. Apresentar primeiro o resultado para o leitor, depois o remapeamento da experiência e, por fim, a entrega do projeto para continuidade. Evitar transformar esta apresentação em um planejamento da sprint seguinte.",
+            "Fontes: Issues #229, #230 e #240. Premissa do usuário."
+          ]
+        },
+        {
+          "number": 3,
+          "text": [
+            "EVOLUÇÃO DO PROJETO",
+            "Da fundação ao produto entregue",
+            "A sprint 4 consolida o trabalho acumulado nas sprints anteriores.",
+            "READRACE   /   SPRINT 4   /   2026–2",
+            "03",
+            "1",
+            "Base navegável",
+            "Tema, biblioteca, busca e primeiros fluxos.",
+            "2",
+            "Leitura com efeito",
+            "XP, nível, sequência, conquistas e desafios.",
+            "3",
+            "Clube vivo",
+            "Quiz, chat, comunidade, personalização e login.",
+            "4",
+            "Experiência final",
+            "Social, metas, acabamento, testes e entrega."
+          ],
+          "notes": [
+            "A apresentação recebida contém a entrega da sprint 2 e o plano da sprint 3. Usá-la como linha de continuidade: a sprint 4 fecha as interações, reforça as regras e prepara a entrega. O resumo da sprint 1 vem das issues de fundação e primeiros módulos.",
+            "Fontes: PPTX recebido, slides 4–15; issues #9–57, #95–111, #146–171, #195–255."
+          ]
+        },
+        {
+          "number": 4,
+          "text": [
+            "PRODUTO FINAL",
+            "Cinco áreas, uma mesma jornada",
+            "O hábito de leitura conecta biblioteca, relações e evolução pessoal.",
+            "READRACE   /   SPRINT 4   /   2026–2",
+            "04",
+            "Feed",
+            "Meus Livros",
+            "Buscar",
+            "Desafios",
+            "Perfil",
+            "Capturas novas com Playwright • Expo Web em 390 × 844 • API e banco temporário com dados de demonstração."
+          ],
+          "notes": [
+            "Apresentar as cinco abas como partes de uma jornada. As telas foram capturadas nesta execução a partir do aplicativo do repositório, com API Spring Boot real e PostgreSQL temporário. O ambiente usa seed, sem autenticação. Não é uma captura do APK nem da produção.",
+            "Fontes: Repositório mobile/src/features; capturas/manifesto.json."
+          ]
+        },
+        {
+          "number": 5,
+          "text": [
+            "DEMONSTRAÇÃO / LEITURA",
+            "A leitura ganha uma ação clara",
+            "A pessoa vê onde parou e registra novas páginas pela própria biblioteca.",
+            "READRACE   /   SPRINT 4   /   2026–2",
+            "05",
+            "1. Continuar lendo",
+            "2. Registrar páginas",
+            "3. Ver a recompensa",
+            "Menos etapas",
+            "Registro direto, sem precisar abrir o detalhe.",
+            "Progresso visível",
+            "Página atual, total e identificação do livro.",
+            "Retorno imediato",
+            "O aviso mostra XP e sequência após salvar."
+          ],
+          "notes": [
+            "Demonstrar a biblioteca, abrir Registrar leitura e confirmar o avanço de cinco páginas novas. A captura de recompensa usa a resposta real do registro e o manifesto registra os valores retornados. A reorganização da biblioteca é melhoria de UX; a recompensa visível é parte do fechamento funcional.",
+            "Fontes: Issues #33, #203 e #219; docs/inspecao-ux-ui.md; capturas 03–05."
+          ]
+        },
+        {
+          "number": 6,
+          "text": [
+            "GAMIFICAÇÃO",
+            "Recompensar a leitura de verdade",
+            "A organização da biblioteca e a evolução do leitor seguem regras distintas.",
+            "READRACE   /   SPRINT 4   /   2026–2",
+            "06",
+            "Página nova vale XP",
+            "Repetir ou voltar páginas não gera novo ganho.",
+            "Conclusão tem bônus único",
+            "Chegar ao fim do livro libera +150 XP uma vez.",
+            "Marcar como “Lido” organiza",
+            "Sem leitura registrada, não conta como livro concluído para as recompensas.",
+            "Feedback após a leitura",
+            "Evolução no perfil",
+            "Regras de páginas, conclusão, sequência e conquistas consolidadas na entrega."
+          ],
+          "notes": [
+            "Explicar que a gamificação depende de páginas novas, acima da maior página já alcançada. Voltar a página continua permitido, mas não repete XP nem avança sequência. O bônus de conclusão sai quando o registro chega ao fim pela primeira vez. Perfil e conquista de livros lidos consideram leitura concluída, não apenas o estado escolhido no catálogo.",
+            "Fontes: Issue #199; RegistrarProgressoService.java; regressões business.spec.ts."
+          ]
+        },
+        {
+          "number": 7,
+          "text": [
+            "GAMIFICAÇÃO",
+            "Um motivo para voltar toda semana",
+            "Metas automáticas dão continuidade ao hábito de leitura.",
+            "READRACE   /   SPRINT 4   /   2026–2",
+            "07",
+            "70",
+            "páginas na semana",
+            "+100 XP ao cumprir",
+            "2",
+            "livros no mês",
+            "+200 XP ao cumprir",
+            "Metas e progresso",
+            "Recompensa única por período.",
+            "Semana de segunda a domingo; mês do calendário."
+          ],
+          "notes": [
+            "Apresentar os dois desafios automáticos: 70 páginas novas na semana e dois livros terminados no mês. As regras usam o fuso de São Paulo. O pagamento de +100 e +200 XP faz parte do cenário de issues concluídas solicitado. A captura demonstra os cards e seus valores, e não constitui teste do pagamento por período; a suíte atual não valida a virada de semana/mês.",
+            "Fontes: Issues #198 e #205. Premissa: ambas concluídas. DesafiosSistema.tsx; DesafioSistema.java."
+          ]
+        },
+        {
+          "number": 8,
+          "text": [
+            "DEMONSTRAÇÃO / SOCIAL",
+            "O que os outros leem também motiva",
+            "A aba Social transforma registros de leitura em atividades visíveis.",
+            "READRACE   /   SPRINT 4   /   2026–2",
+            "08",
+            "Acompanhar quem eu sigo",
+            "Páginas novas e livros concluídos aparecem no feed.",
+            "Explorar a partir da atividade",
+            "O card abre o perfil do leitor e o detalhe do livro.",
+            "Descobrir relações",
+            "Listas de seguidores e perfis pelo ranking conectam os leitores.",
+            "Atividade de leitura",
+            "Perfil e seguidores"
+          ],
+          "notes": [
+            "Mostrar que o feed social é derivado dos registros de leitura de quem a pessoa segue. Não é um post manual. A versão entregue apresenta páginas lidas e conclusão, com acesso ao autor e ao livro. A lista de seguidores e o acesso pelo ranking completam a descoberta de pessoas. Curtidas e comentários de posts pertencem às comunidades e aos clubes.",
+            "Fontes: Issues #197, #201, #202 e #204; FeedSocialService.java; social.spec.ts."
+          ]
+        },
+        {
+          "number": 9,
+          "text": [
+            "DEMONSTRAÇÃO / CLUBES",
+            "Entrar, participar e manter o clube ativo",
+            "A jornada passa a incluir descoberta, pedidos de entrada e continuidade da liderança.",
+            "READRACE   /   SPRINT 4   /   2026–2",
+            "09",
+            "Descobrir clubes",
+            "Participar da leitura",
+            "Entrada com aprovação",
+            "Leitor pede; a liderança aceita ou recusa.",
+            "Leitura em grupo",
+            "Quiz, pontos, ranking, fórum e chat no mesmo contexto.",
+            "Saída com continuidade",
+            "Se o único líder sai, a liderança passa para outro membro."
+          ],
+          "notes": [
+            "A base da sprint 3 ganha fechamento na sprint 4. Quem ainda não participa encontra os clubes e solicita entrada. A aprovação controla a participação. O clube mantém quiz, ranking, fórum e chat. Na saída do único líder, o membro com mais pontos assume; empate é resolvido por quem entrou primeiro. A captura mostra descoberta e página do clube; as regras de aprovação e sucessão são descritas com base nas issues e no código.",
+            "Fontes: Issues #148, #151, #153, #161–163, #234 e #237; ClubeService e SolicitacaoClubeService."
+          ]
+        },
+        {
+          "number": 10,
+          "text": [
+            "DEMONSTRAÇÃO / COMUNIDADES",
+            "A conversa acompanha o livro",
+            "Publicação, comentários e descoberta tornam a participação mais completa.",
+            "READRACE   /   SPRINT 4   /   2026–2",
+            "10",
+            "Encontrar e participar",
+            "Comunidades sugeridas aparecem no feed.",
+            "Publicar e conversar",
+            "Posts de comunidade, comentários e respostas em thread.",
+            "Escolher o que ver",
+            "“Mais recentes” e “Em alta” organizam os posts.",
+            "Página da comunidade",
+            "Escrever um post"
+          ],
+          "notes": [
+            "Demonstrar a página da comunidade e o painel de publicação. A captura do painel contém texto de demonstração e não publica o conteúdo. Comentar e responder também são estendidos ao fórum do clube e aos posts do detalhe do livro, conforme as permissões. Em alta ordena por curtidas, com desempate pelo mais recente.",
+            "Fontes: Issues #150, #235, #236 e #238; ComunidadeScreen.tsx; ComentariosSheet.tsx."
+          ]
+        },
+        {
+          "number": 11,
+          "text": [
+            "BIBLIOTECA E PERSONALIZAÇÃO",
+            "O leitor organiza a própria experiência",
+            "A entrega reúne controle dos livros e identidade no perfil.",
+            "READRACE   /   SPRINT 4   /   2026–2",
+            "11",
+            "Encontrar um livro",
+            "Escolher um mascote",
+            "Biblioteca sob controle",
+            "Adicionar, trocar de lista, favoritar e remover com proteção do histórico.",
+            "Perfil com identidade",
+            "Avatar, plano de fundo e mascotes; mascotes desbloqueiam por nível.",
+            "Configurações claras",
+            "Nome, usuário e saída da conta; ações sem destino foram retiradas."
+          ],
+          "notes": [
+            "O fechamento também cobre ações de manutenção: o mesmo livro é reutilizado no catálogo; as listas mudam sem pagar XP por si só; remoção protege livros com histórico de leitura. A personalização reúne mascotes por nível, avatares e planos de fundo. Avatar e plano de fundo não têm desbloqueio por nível nesta entrega. Configurações gerais preservam apenas a ação funcional de desconectar.",
+            "Fontes: Issues #164, #165, #218, #219, #239 e #249."
+          ]
+        },
+        {
+          "number": 12,
+          "text": [
+            "02 / REMAP DE UI/UX",
+            "A leitura no centro da interface",
+            "READRACE   /   SPRINT 4   /   2026–2",
+            "12",
+            "O que estou lendo?",
+            "Onde parei?",
+            "Como continuo?",
+            "Três perguntas guiaram a reorganização da biblioteca",
+            "e a revisão de consistência das outras telas."
+          ],
+          "notes": [
+            "Introduzir remap como reorganização da hierarquia e dos caminhos. O diagnóstico do repositório identificou que capas sem identificação, cabeçalho alto e falta de ação direta escondiam a tarefa principal. A avaliação é heurística; não há estudo com leitores nem medida de redução de tempo.",
+            "Fontes: docs/inspecao-ux-ui.md, diagnóstico e proposta de organização da biblioteca."
+          ]
+        },
+        {
+          "number": 13,
+          "text": [
+            "REMAP / ANTES E DEPOIS",
+            "Biblioteca: de capas à continuidade da leitura",
+            "READRACE   /   SPRINT 4   /   2026–2",
+            "13",
+            "ANTES • 11/11/2026",
+            "DEPOIS • atual",
+            "Hierarquia",
+            "Cabeçalho compacto e leitura atual antes das seções secundárias.",
+            "Identificação",
+            "Título e autor visíveis; fallback quando a capa não está disponível.",
+            "Ação principal",
+            "Adicionar no topo; progresso e registro direto na biblioteca.",
+            "Antes: inspeção de 11/11/2026. Depois: captura Playwright desta apresentação. Dados e momento podem variar."
+          ],
+          "notes": [
+            "A imagem anterior é uma evidência histórica guardada em docs/ux-ui. A imagem posterior foi capturada nesta execução. O foco da comparação é estrutura, informação e ações; os dados e o momento das capturas não são controlados. O progresso vem da API paginada e a navegação preserva filtros e acesso ao restante dos livros.",
+            "Fontes: docs/inspecao-ux-ui.md; docs/ux-ui/11-biblioteca-carregada.png; MeusLivrosView.tsx; capturas/03-biblioteca.png."
+          ]
+        },
+        {
+          "number": 14,
+          "text": [
+            "REMAP / CONSISTÊNCIA",
+            "A mesma clareza nas outras telas",
+            "Orientação, hierarquia e densidade de informação revisadas em conjunto.",
+            "READRACE   /   SPRINT 4   /   2026–2",
+            "14",
+            "BUSCA",
+            "Instruções por categoria.",
+            "CLUBE",
+            "Registrar leitura em destaque.",
+            "PERFIL",
+            "Estatísticas aparecem mais cedo.",
+            "Base comum",
+            "Tokens de design",
+            "Rótulos na navegação",
+            "Termos consistentes",
+            "Estados vazios claros",
+            "Layout verificado também em 320 px. A revisão de UX é heurística, sem métricas de teste com leitores."
+          ],
+          "notes": [
+            "A busca orienta por categoria; a página de clube diferencia leitura das ações secundárias; o topo ilustrado do perfil foi reduzido para expor estatísticas mais cedo. A navegação inferior ganhou rótulos e a terminologia de clube foi padronizada. Os tokens seguem como fonte de cor e medida. As regressões cobrem telas pequenas, estados vazios, ausência de capa e recuperação de erro.",
+            "Fontes: docs/inspecao-ux-ui.md, correções implementadas; mobile/e2e/regression/ux.spec.ts; mobile/src/theme/tokens.js."
+          ]
+        },
+        {
+          "number": 15,
+          "text": [
+            "REMAP / DESIGN E IMPLEMENTAÇÃO",
+            "Fechar a distância entre Figma e app",
+            "O registro final do design acompanha o comportamento que foi entregue.",
+            "READRACE   /   SPRINT 4   /   2026–2",
+            "15",
+            "Telas que nasceram no código",
+            "Chat, ranking completo, seguidores, solicitações e personalização.",
+            "Fluxos novos da sprint 4",
+            "Recompensa, Social, metas, posts e descoberta de clubes/comunidades.",
+            "Diferenças documentadas",
+            "O que mudou por decisão, corte de escopo ou limitação.",
+            "Identidade preservada",
+            "Paleta vinho, tipografia, componentes e tokens compartilhados.",
+            "Fechamento do inventário Figma + página de diferenças na wiki: entregas consideradas concluídas pela premissa adotada."
+          ],
+          "notes": [
+            "Separar dois trabalhos: a revisão de UX reorganiza a interface; o remapeamento de design documenta o aplicativo real. A issue #250 pede que as telas construídas sem Figma ganhem correspondência no design. A #228 registra diferenças e cortes na wiki. A conclusão dessas entregas externas é assumida por orientação do solicitante: esta produção não auditou nem alterou Figma ou wiki.",
+            "Fontes: Issues #11, #228 e #250; README, seção Tema do app. Premissa do usuário."
+          ]
+        },
+        {
+          "number": 16,
+          "text": [
+            "QUALIDADE / EVIDÊNCIA LOCAL",
+            "Verificar fluxos completos, inclusive os erros",
+            "Playwright conecta interface, API e persistência num ambiente isolado.",
+            "READRACE   /   SPRINT 4   /   2026–2",
+            "16",
+            "30",
+            "testes aprovados",
+            "Execução local desta preparação.",
+            "9",
+            "fluxos principais",
+            "Biblioteca, social, clubes, perfil e erro.",
+            "8",
+            "verificações de UX",
+            "Telas pequenas, estados e registro direto.",
+            "9 smoke + 13 regressões + 8 verificações de UX",
+            "Navegador: Chromium • API real • PostgreSQL temporário • dados restaurados entre testes"
+          ],
+          "notes": [
+            "Atualizar este slide a partir do resultado efetivo da execução desta preparação. A suíte automatizada verifica navegação, registro persistido, regras de páginas e conclusão, participação social e estados recuperáveis. O total não é cobertura de todas as 132 issues. Browser em seed não comprova APK, Cognito, Google nativo, teclado e voltar do Android. Esses itens pertencem à regressão instalada da #226, considerada concluída pela premissa do usuário. Não foi feita validação de produção ou CI nesta preparação.",
+            "Fontes: Issue #233; mobile/e2e; e2e-artifacts/results.xml; docs/inspecao-ux-ui.md."
+          ]
+        },
+        {
+          "number": 17,
+          "text": [
+            "ENTREGA TÉCNICA",
+            "Uma base preparada para continuidade",
+            "Aplicativo, autenticação, API e operação têm responsabilidades documentadas.",
+            "READRACE   /   SPRINT 4   /   2026–2",
+            "17",
+            "Android / Expo",
+            "Interface e jornada do leitor",
+            "Spring Boot",
+            "Regras, permissões e respostas",
+            "PostgreSQL",
+            "Persistência e migrations",
+            "→",
+            "→",
+            "Cognito",
+            "Login, cadastro e sessão",
+            "GitHub Actions",
+            "Verificações e deploy pela main",
+            "AWS + Terraform",
+            "HTTPS, backups, logs e alarmes",
+            "Arquitetura sintetizada a partir do repositório. Estado final das entregas operacionais segue a premissa de issues concluídas."
+          ],
+          "notes": [
+            "Explicar apenas o necessário para continuidade: app Expo/React Native, API Java/Spring Boot, PostgreSQL/Flyway, Cognito e AWS com infraestrutura em Terraform. A operação documenta deploy, backup e monitoramento. O repositório contém documentação histórica com itens antigos; esta síntese usa os arquivos atuais e o cenário de fechamento solicitado. Não houve acesso à AWS nem execução de deploy nesta preparação.",
+            "Fontes: README.md; infra/README.md; infra/terraform; .github/workflows; issues #181, #223–225 e #227."
+          ]
+        },
+        {
+          "number": 18,
+          "text": [
+            "ESCOPO FINAL",
+            "O projeto termina com fronteiras claras",
+            "O escopo consolidado registra tanto as entregas quanto os cortes acordados.",
+            "READRACE   /   SPRINT 4   /   2026–2",
+            "18",
+            "ENTREGUE",
+            "Leitura e biblioteca",
+            "Gamificação e metas",
+            "Clubes e comunidades",
+            "Perfil e personalização",
+            "Android com login",
+            "FORA DO ESCOPO",
+            "iOS e publicação na Play Store",
+            "Notificações e canal de suporte",
+            "Enquetes e eventos",
+            "Recomendações de livros",
+            "Ranking global e painel administrativo"
+          ],
+          "notes": [
+            "Não apresentar cortes acordados como bugs em aberto. O ranking entregue é o do clube. O painel corresponde à experiência do usuário, sem painel administrativo separado. Notificações, suporte, enquetes, eventos, recomendações e ranking global foram retirados do escopo. iOS e publicação em loja também estão fora. O encerramento pressupõe todas as issues fechadas, sem prometer uma sprint adicional.",
+            "Fontes: Issue #228, cortes acordados; #249; docs/release-android.md; README.md."
+          ]
+        },
+        {
+          "number": 19,
+          "text": [
+            "03 / ENCERRAMENTO",
+            "O que o projeto deixa entregue",
+            "Produto utilizável e conhecimento suficiente para quem dá continuidade.",
+            "READRACE   /   SPRINT 4   /   2026–2",
+            "19",
+            "01",
+            "Produto",
+            "APK Android, jornada completa e conta de demonstração.",
+            "02",
+            "Base técnica",
+            "Código, migrations, CI/CD e infraestrutura versionada.",
+            "03",
+            "Conhecimento",
+            "Wiki, arquitetura, configuração e diferenças do design.",
+            "04",
+            "Operação",
+            "Roteiros de backup, recuperação, monitoramento e demo."
+          ],
+          "notes": [
+            "Esta é a síntese do fechamento do projeto, usando o cenário solicitado de todas as issues encerradas. Produto: aplicativo e demonstração. Técnica: código e infraestrutura. Conhecimento: documentação fiel ao que existe. Operação: procedimentos para sustentar a entrega. A existência dos arquivos locais foi inspecionada; a publicação final da wiki e o aceite operacional são pressupostos, não ações realizadas por esta preparação.",
+            "Fontes: Issues #185, #220, #225–228, #230 e #250; README.md; infra/README.md."
+          ]
+        },
+        {
+          "number": 20,
+          "text": [
+            "APRENDIZADOS",
+            "O que esta entrega ensina ao próximo time",
+            "Lições extraídas das decisões e correções registradas no projeto.",
+            "READRACE   /   SPRINT 4   /   2026–2",
+            "20",
+            "Fechar um fluxo exige mais que uma tela",
+            "Permissões, retorno, estado vazio, falhas e saída fazem parte da experiência.",
+            "Gamificação precisa de regras consistentes",
+            "Biblioteca, perfil, conquistas e desafios devem concordar sobre o que é leitura.",
+            "Design e documentação acompanham o produto",
+            "Tokens, capturas, testes e decisões registradas reduzem divergências."
+          ],
+          "notes": [
+            "Apresentar como síntese técnica, não como pesquisa de satisfação do time ou dos usuários. Os aprendizados decorrem das issues de fechamento e do diagnóstico de interface. Não há base para afirmar aumento de engajamento, retenção ou redução percentual do tempo de uso. O projeto deixa essas hipóteses para uma avaliação futura, caso haja continuidade.",
+            "Fontes: Issues #199, #221, #222, #228, #233 e #250; docs/inspecao-ux-ui.md."
+          ]
+        },
+        {
+          "number": 21,
+          "text": [
+            "FECHAMENTO DO PROJETO",
+            "A leitura é o ponto de partida.",
+            "READRACE   /   SPRINT 4   /   2026–2",
+            "21",
+            "A evolução aparece.",
+            "A comunidade participa.",
+            "O projeto deixa uma base.",
+            "READRACE  •  ENTREGA FINAL  •  2026/2"
+          ],
+          "notes": [
+            "Fechar retomando a proposta de incentivar o hábito de leitura com gamificação casual. A sprint 4 consolida a experiência, revisa a interface e organiza a entrega. Abrir espaço para perguntas e demonstração ao vivo, se desejado. Não afirmar resultados de impacto em leitores, pois não foram medidos.",
+            "Fontes: README.md e síntese das entregas."
+          ]
+        }
+      ]
+    },
+    {
+      "file": "C:\\Users\\Arthur\\Downloads\\ReadRace Sprint 3 Inicial (1).pptx",
+      "sha256": "a05ec5d9cfd25bd446b50d8064d95e9ff7807573a37c7d2c01df6bd709023109",
+      "slides": [
+        {
+          "number": 1,
+          "text": [
+            "READRACE ",
+            "Sprint 2 - Entrega",
+            "Apresentação para clientes: o que foi entregue, o que mudou no plano e o que vem na Sprint 3.",
+            "02 de outubro de 2026"
+          ]
+        },
+        {
+          "number": 2,
+          "text": [
+            "ABERTURA",
+            "Agenda da apresentação",
+            "01",
+            "Entregáveis - Sprint 2",
+            "O app funcionando: o que a sprint entregou e o que mudou no caminho.",
+            "02",
+            "Planejamento - Sprint 3",
+            "O que o leitor vai poder fazer em 26/10."
+          ]
+        },
+        {
+          "number": 3,
+          "text": [
+            "01",
+            "Demonstração do App",
+            "O app ao fim da Sprint 2, com dados reais do servidor."
+          ]
+        },
+        {
+          "number": 4,
+          "text": [
+            "v",
+            "v",
+            "vv",
+            "v",
+            "DEMO",
+            "Um registro de leitura, cinco consequências",
+            "Perfil antes: 521 XP",
+            "Registrar até a pág. 256",
+            "Perfil depois: 782 XP",
+            "Placar dos desafios",
+            "Daniel termina Dom Casmurro: +261 XP, 6º livro lido, 1.966 páginas, e os placares dos desafios andam (0 → 111 e 185 → 296). Sequência e conquistas também são reavaliadas no mesmo registro."
+          ]
+        },
+        {
+          "number": 5,
+          "text": [
+            "v",
+            "v",
+            "vv",
+            "v",
+            "DEMO",
+            "Fluxo Desafios: da criação ao resultado",
+            "Aba Desafios",
+            "Desafiar amigo",
+            "Escolher livro",
+            "Resultado e revanche",
+            "Era a pendência da Sprint 1. Agora o leitor desafia um amigo por páginas ou por livro, acompanha o placar e vê quem venceu."
+          ]
+        },
+        {
+          "number": 6,
+          "text": [
+            "DEMO",
+            "Fluxo Perfil e social: nível, conquistas e curtidas",
+            "Aba Perfil",
+            "Minhas Conquistas",
+            "Curtir post"
+          ]
+        },
+        {
+          "number": 7,
+          "text": [
+            "PENDÊNCIAS",
+            "O que mudou no plano",
+            "• A sprint passou de 4 para 2 semanas. Das 21 tasks apresentadas, saíram 3: participar de comunidade, página da comunidade e adicionar livro. As três abrem a Sprint 3.",
+            "• Entrou fora do plano: login com e-mail e senha e a API publicada na nuvem (AWS).",
+            "• O login ainda não chega ao usuário: falta o app instalável, que é a primeira entrega da Sprint 3.",
+            "• Mascotes e a engrenagem do Perfil ainda mostram o aviso \"em desenvolvimento\". Entram na Sprint 3.",
+            "Nenhuma task do plano final ficou para trás: 18 de 18 entregues."
+          ]
+        },
+        {
+          "number": 8,
+          "text": [
+            "ENTREGA",
+            "Sprint 2 em números",
+            "18/18",
+            "Entregues",
+            "6",
+            "Telas novas",
+            "5",
+            "Consequências",
+            "+4",
+            "Extras: login",
+            "• Registrar uma leitura agora move XP, nível, sequência, placar dos desafios e conquistas.",
+            "• Desafio entre amigos completo: criar, escolher o livro, acompanhar o placar e ver o resultado.",
+            "• Aba Perfil e Minhas Conquistas no ar; o coração dos posts curte de verdade.",
+            "• Dívida da Sprint 1 paga: navegação, capas em branco, acessibilidade e testes no CI."
+          ]
+        },
+        {
+          "number": 9,
+          "text": [
+            "02",
+            "Sprint 3",
+            "O que o leitor vai poder fazer em 26/10."
+          ]
+        },
+        {
+          "number": 10,
+          "text": [
+            "v",
+            "v",
+            "vv",
+            "v",
+            "JORNADA",
+            "Clube: criar, jogar o quiz e subir no ranking",
+            "Criar clube",
+            "Líder monta o quiz",
+            "Acerto: +50 pontos",
+            "Ranking (já no app)",
+            "A Ana cria um clube para ler Harry Potter e já adiciona os amigos. Como líder, monta um quiz sobre o livro. Cada acerto e cada página lida valem pontos, e o ranking do clube anda. O clube também ganha um chat."
+          ]
+        },
+        {
+          "number": 11,
+          "text": [
+            "JORNADA",
+            "Social: comunidades e livros novos",
+            "Seguir comunidade",
+            "Adicionar livro",
+            "Livro na biblioteca",
+            "O Pedro segue a comunidade Nostalgia Anos 2000 e ela aparece no feed. O livro que ele lê não está no app? Ele adiciona pelo título ou ISBN. E no fórum do clube, passa a escrever posts."
+          ]
+        },
+        {
+          "number": 12,
+          "text": [
+            "JORNADA",
+            "Perfil e app: mascote, configurações e login",
+            "Escolher mascote",
+            "Configurações de perfil",
+            "Configurações gerais",
+            "O leitor desbloqueia mascotes subindo de nível, edita o perfil e sai da conta. E, pela primeira vez, instala o app no celular e entra com a própria conta."
+          ]
+        },
+        {
+          "number": 13,
+          "text": [
+            "ESCOPO",
+            "Sprint 3 em números",
+            "17",
+            "Tasks",
+            "Gamificação",
+            "6 tasks — quiz do clube, pontos no ranking, mascotes e configurações.",
+            "Clube",
+            "6 tasks — criar clube, chat, ranking completo, sair do clube, revanche e listas.",
+            "Social",
+            "5 tasks — comunidades, escrever post, adicionar livro, app instalável e login com Google.",
+            "2",
+            "De reserva",
+            "3",
+            "Squads",
+            "1",
+            "Dependência"
+          ]
+        },
+        {
+          "number": 16,
+          "text": [
+            "FECHAMENTO",
+            "Critério de sucesso da Sprint 3",
+            "• O leitor cria um clube; o líder monta um quiz, e os membros ganham pontos e sobem no ranking.",
+            "• O clube tem chat, e o fórum aceita posts novos.",
+            "• O leitor segue comunidades e adiciona livros que ainda não estavam no app.",
+            "• O app se instala no celular, com login de verdade.",
+            "A Sprint 3 dá vida ao clube: ler junto passa a ser também jogar e conversar junto."
+          ]
+        },
+        {
+          "number": 17,
+          "text": [
+            "APÊNDICE",
+            "Histórias da Sprint 3, para consulta",
+            "Gamificação",
+            "RQ-119  Base do quiz",
+            "RQ-120  Líder configura o quiz",
+            "RQ-121  Membro responde o quiz",
+            "RQ-122  Leitura soma pontos no clube",
+            "RQ-124  Mascotes",
+            "RQ-125  Configurações e sair da conta",
+            "Clube",
+            "RQ-083  Criar clube",
+            "RQ-086  Chat do clube",
+            "RQ-088  Ranking completo",
+            "RQ-087  Sair do clube",
+            "RQ-057  Revanche",
+            "RQ-036  Livro nas listas",
+            "Social",
+            "RQ-082  Seguir comunidade",
+            "RQ-084  Escrever post no fórum",
+            "RQ-090  Adicionar livro",
+            "RQ-116  App instalável com login",
+            "RQ-113  Login com Google",
+            "Reserva  RQ-085 Comentar post",
+            "Reserva  RQ-089 Seguir leitor"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "C:\\Users\\Arthur\\Downloads\\ReadRace Sprint 2 Inicial (1).pdf",
+      "sha256": "bbdc4dd1e978241435389f3294a0bb480352d7dcd1bae78b1ec7157bb8b35372",
+      "pages": [
+        {
+          "number": 1,
+          "text": "READRACE \nSprint 1 - Entrega\nApresentação para clientes: Implementações \nrealizadas, \npendências \ne \nplanejamento \nda \npróxima entrega.\n18 de setembro de 2026\n"
+        },
+        {
+          "number": 2,
+          "text": "ABERTURA\nAgenda da apresentação\n01\nEntregáveis - Sprint 1\nDemonstração de tudo que foi \ndesenvolvido ao longo da sprint e \npendências para a próxima.\n02\nPlanejamento - Sprint 2\nPlano \nde \nhistórias \na \nserem \ndesenvolvidas pela equipe ao \nlongo da sprint\n"
+        },
+        {
+          "number": 3,
+          "text": "01\nDemonstração do App\nTarefas e fluxos principais que foram \ndesenvolvidos durante a Sprint 1\n"
+        },
+        {
+          "number": 4,
+          "text": "DEMO\nFluxo Biblioteca: Encontrar, abrir e registrar progresso\nMeus Livros\nDetalhe do livro\nRegistrar progresso\n"
+        },
+        {
+          "number": 5,
+          "text": "DEMO\nFluxo Social: Comunidades, clube e fórum\nFeed de comunidades\nPágina do clube\nFórum do clube\n"
+        },
+        {
+          "number": 6,
+          "text": "DEMO\nFluxo Busca: Livros, leitores e comunidades\nBuscar Livro\nBuscar Perfil\nPerfil de outro usuário\n"
+        },
+        {
+          "number": 7,
+          "text": "v\nv\nvv\nv\nPENDÊNCIAS\nPendências: Fluxo de Desafiar amigos\nAba Desafios\nDesafiar amigo\nEscolher livro\nResultado\nTelas de design — ainda não implementadas. A Sprint 2 entrega o desafio entre amigos.\n"
+        },
+        {
+          "number": 8,
+          "text": "ENTREGA\nSprint 1 em números\n32 Entregues\n8\nTelas\n17 Endpoints\n16 Componentes\n• Biblioteca completa: encontrar o livro, abrir o detalhe e registrar em que página parou.\n• Social de pé: feed de comunidades, página do clube com ranking e fórum de leitura.\n• Busca nas três abas — livros, leitores e comunidades — e o perfil de outro leitor.\n• Falta apenas o fluxo de desafio entre amigos, que abre a Sprint 2.\n"
+        },
+        {
+          "number": 9,
+          "text": "02\nUser Stories\nO conjunto de histórias que será desenvolvido \nna segunda sprint.\n"
+        },
+        {
+          "number": 10,
+          "text": "HISTÓRIAS\nFrente 1 — Gamificação\nRQ-070\nComo leitor, quero que as páginas que eu leio virem XP e nível para acompanhar \nminha evolução.\nRQ-071\nComo leitor, quero que meus dias seguidos de leitura formem uma sequência para \nme ajudar a manter o hábito.\nRQ-072\nComo leitor, quero que minha leitura avance o placar dos desafios em que estou para \nacompanhar a disputa.\nRQ-073\nComo leitor, quero desbloquear conquistas ao atingir marcos de leitura para ser \nreconhecido pelo meu progresso.\nRQ-074\nComo leitor, quero uma aba de perfil com meu nível, estatísticas e favoritos para ver \ntudo num lugar só.\nRQ-075\nComo leitor, quero ver minhas conquistas e as próximas para saber o que buscar em \nseguida.\n"
+        },
+        {
+          "number": 11,
+          "text": "HISTÓRIAS\nFrente 2 — Desafio entre amigos\nRQ-055\nComo leitor, quero uma aba de desafios com as disputas que tenho com amigos para \nacompanhar todas num lugar só.\nRQ-051\nComo leitor, quero desafiar um amigo a ler mais páginas num prazo para \ntransformar a leitura em competição.\nRQ-052\nComo leitor, quero definir um livro específico como meta do desafio para combinar a \nleitura com o amigo.\nRQ-053\nComo leitor, quero escolher o livro do desafio a partir da minha estante para montar \na disputa rapidamente.\nRQ-054\nComo leitor, quero ver o resultado de um desafio terminado para saber quem \nvenceu.\n"
+        },
+        {
+          "number": 12,
+          "text": "HISTÓRIAS\nFrente 3 — Social, biblioteca e qualidade\nRQ-080\nComo leitor, quero curtir os posts do fórum e do livro para reagir ao que os outros \nescreveram.\nRQ-081\nComo leitor, quero participar de uma comunidade para acompanhá-la no meu feed.\nRQ-082\nComo leitor, quero abrir a página de uma comunidade para ver do que ela trata e o \nque andam postando.\nRQ-090\nComo leitor, quero adicionar um livro novo pelo título ou pelo ISBN para colocá-lo na \nminha biblioteca.\nRQ-100 a 105\nComo time, queremos corrigir navegação, acessibilidade e cobertura de testes para \nsustentar as próximas sprints.\n"
+        },
+        {
+          "number": 13,
+          "text": "ESCOPO\nSprint 2 em números\n21 Tasks ativas\n0\nGamificação\n6 tasks — XP, nível, sequência, \nconquistas e a aba Perfil.\nDesafio entre amigos\n5 tasks — as cinco telas que \natravessaram da Sprint 1.\nSocial e qualidade\n10 tasks — curtir, \ncomunidades, adicionar livro e \ndívida técnica.\n37 Tasks ativas\n37 Tasks ativas\n37\nTasks ativas\n0\nBloqueios\n5\nPendências\n3\nFrentes\n"
+        },
+        {
+          "number": 14,
+          "text": "FECHAMENTO\nCritério de sucesso da Sprint 2\n• Registrar uma leitura passa a mover XP, nível, sequência, conquistas e desafios.\n• O leitor vê o próprio progresso: aba Perfil e Minhas Conquistas no ar.\n• O fluxo de desafio entre amigos fecha, da criação ao resultado.\n• O app deixa de ser só leitura: curtir, participar de comunidade e adicionar livro novo.\nA Sprint 2 liga a gamificação: o que o leitor faz no app passa a ter consequência.\n"
+        }
+      ]
+    }
+  ]
+}
