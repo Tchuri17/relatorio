@@ -2,21 +2,33 @@
 
 \subsection{Repositório do Código Fonte do Projeto}
 
-O código está disponível em \url{https://github.com/ReadRace-AGES/ReadRace}. O projeto utiliza um monorepositório com as pastas \texttt{backend} e \texttt{mobile}, tendo \texttt{dev} como branch principal de desenvolvimento. As tarefas são acompanhadas em \url{https://github.com/orgs/ReadRace-AGES/projects/1}. A wiki institucional reúne escopo, configuração e arquitetura: \url{https://tools.ages.pucrs.br/2026-2/6lmnp/readrace/readrace-wiki/-/wikis/home}.
+O código está disponível em \url{https://github.com/ReadRace-AGES/ReadRace}. O projeto utiliza um monorepositório com as pastas \texttt{backend} e \texttt{mobile}, tendo \texttt{dev} como \textit{branch} principal de desenvolvimento. As tarefas são acompanhadas em \url{https://github.com/orgs/ReadRace-AGES/projects/1}. A wiki institucional reúne escopo, configuração e arquitetura: \url{https://tools.ages.pucrs.br/2026-2/6lmnp/readrace/readrace-wiki/-/wikis/home}.
 
-O repositório de gestão AGESIV reúne os requisitos, as decisões de produto e o planejamento das sprints, incluindo as dependências entre as tarefas.
+O repositório de gestão AGESIV reúne os requisitos, as decisões de produto e o planejamento das \textit{sprints}, incluindo as dependências entre as tarefas.
+
+\subsection{Uso de agentes de inteligência artificial}
+
+Utilizei agentes de inteligência artificial ao longo das quatro passagens pela \ac{AGES}, mas a frequência e a forma de uso mudaram durante esse percurso. Na \ac{AGES} I e na \ac{AGES} II, recorri pouco a essas ferramentas. Na minha experiência naquele período, os agentes ainda apresentavam erros frequentes, o que limitava sua utilidade nas tarefas que eu precisava realizar.
+
+A partir da \ac{AGES} III, passei a utilizá-los com mais frequência no desenvolvimento e na revisão de código. Para orientar esse trabalho, combinava \textit{skills}, entendidas como conjuntos de instruções para tarefas específicas, com informações do projeto organizadas no Obsidian. A intenção era fornecer ao agente o contexto necessário para produzir respostas mais adequadas ao que estávamos construindo. Depois, eu revisava manualmente o código para procurar inconsistências. Assim, o uso da ferramenta fazia parte do meu processo de implementação e revisão, com a necessidade de conferir o resultado antes de incorporá-lo ao trabalho.
+
+Na \ac{AGES} IV, esse apoio se estendeu à gestão. Utilizamos o contexto obtido no levantamento de requisitos para orientar agentes na criação das issues no GitHub, aproximando a descrição das tarefas das necessidades discutidas com os clientes. Essa aplicação foi relevante em uma etapa na qual minha participação envolvia acompanhar o escopo e ajudar a organizar o trabalho dos colegas, além de desenvolver e revisar código.
+
+Também criamos um repositório compartilhado entre os integrantes da \ac{AGES} IV para reunir contexto em arquivos Markdown, com extensão \texttt{.md}. A lógica era semelhante à organização que eu já utilizava no Obsidian, mas passou a ser compartilhada pela equipe. Esses registros apoiavam tanto a geração de código quanto a elaboração de issues, permitindo que diferentes integrantes fornecessem aos agentes uma base comum de informações sobre o projeto.
+
+Essa evolução me fez dar mais atenção à preparação do contexto e à revisão das respostas. Minha participação passou a incluir a organização das informações que orientavam os agentes e a leitura crítica do que produziam. O uso mais frequente dessas ferramentas tornou ainda mais presente a necessidade de compreender os requisitos e de reconhecer inconsistências no código, em vez de considerar a resposta gerada como suficiente por si só.
 
 \subsection{Banco de Dados Utilizado}
 
-O sistema utiliza PostgreSQL 16, com alterações estruturais versionadas por migrations do Flyway. O Hibernate valida o schema, enquanto as migrations são responsáveis por sua evolução. O modelo relacional em DBML, versão 8, contempla usuários, livros, autores, gêneros, itens da biblioteca e registros de leitura, além de entidades sociais e de gamificação.
+O sistema utiliza PostgreSQL 16, com alterações estruturais versionadas por \textit{migrations} do Flyway. O Hibernate valida o \textit{schema}, enquanto as \textit{migrations} são responsáveis por sua evolução. O modelo relacional em \ac{DBML}, versão 8, contempla usuários, livros, autores, gêneros, itens da biblioteca e registros de leitura, além de entidades sociais e de gamificação.
 
 Entre os relacionamentos estão os vínculos entre livros e autores, a associação dos livros à biblioteca de cada usuário, a participação em clubes e comunidades, os desafios entre amigos e as conquistas.
 
-A revisão da coerência entre esse modelo e as user stories foi uma das minhas contribuições. Identifiquei divergências, registrei dúvidas e discuti sugestões com os demais AGES IV para alinhamento com os colegas responsáveis pela modelagem.
+A revisão da coerência entre esse modelo e as histórias de usuário foi uma das minhas contribuições. Identifiquei divergências, registrei dúvidas e discuti sugestões com os demais \ac{AGES} IV para alinhamento com os colegas responsáveis pela modelagem.
 
-A Figura~\ref{fig:readrace-banco-dados} apresenta uma visão geral do modelo relacional disponível na wiki. A associação entre biblioteca, registros de leitura e recursos sociais permite compreender como o acompanhamento individual se relaciona às demais funcionalidades do aplicativo. O diagrama retrata a versão consultada na documentação, sem representar necessariamente o estado do banco na Sprint 1.
+A Figura~\ref{fig:readrace-banco-dados} apresenta uma visão geral do modelo relacional disponível na wiki. A associação entre biblioteca, registros de leitura e recursos sociais permite compreender como o acompanhamento individual se relaciona às demais funcionalidades do aplicativo. O diagrama retrata a versão consultada na documentação, sem representar necessariamente o estado do banco na \textit{Sprint} 1.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
     \centering
     \caption{Visão geral do modelo relacional do ReadRace}
     \label{fig:readrace-banco-dados}
@@ -26,34 +38,40 @@ A Figura~\ref{fig:readrace-banco-dados} apresenta uma visão geral do modelo rel
 
 \subsection{Arquitetura Utilizada}
 
-O aplicativo mobile comunica-se com uma API Spring Boot, que concentra as regras de negócio e o acesso ao PostgreSQL. O backend organiza suas responsabilidades em Controller, Service e Repository. Para a consulta ao catálogo externo de livros, a documentação descreve uma interface com adaptadores: uma base local atende desenvolvimento e testes, enquanto a integração com Google Books é selecionada em produção.
+O aplicativo \textit{mobile} comunica-se com uma \ac{API} Spring Boot, que concentra as regras de negócio e o acesso ao PostgreSQL. O \textit{backend} organiza suas responsabilidades em \textit{Controller}, \textit{Service} e \textit{Repository}. Para a consulta ao catálogo externo de livros, a documentação descreve uma interface com adaptadores: uma base local atende desenvolvimento e testes, enquanto a integração com Google Books é selecionada em produção.
 
-No mobile, o expo-router organiza as rotas e as telas são agrupadas por funcionalidades. O tema e os componentes compartilhados favorecem a consistência da interface. Na Sprint 1, utilizamos um usuário fixo dos dados iniciais, identificado pelo backend.
+No \textit{mobile}, o expo-router organiza as rotas e as telas são agrupadas por funcionalidades. O tema e os componentes compartilhados favorecem a consistência da interface. Na \textit{Sprint} 1, utilizamos um usuário fixo dos dados iniciais, identificado pelo \textit{backend}.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=\linewidth,height=0.42\textheight,keepaspectratio]{conteudo/5 - ages IV/conteudo/figures/arquitetura.png}
-\caption{Arquitetura de aplicação do ReadRace.}
+\caption{Arquitetura de aplicação do ReadRace}
+\label{fig:readrace-arquitetura}
 \legend{Fonte: wiki do projeto ReadRace.}
 \end{figure}
 
-A arquitetura de implantação descrita na wiki inclui Docker, NGINX, Cloudflare e serviços AWS, como EC2, ECR e SSM Parameter Store.
+A Figura~\ref{fig:readrace-arquitetura} reúne os componentes da aplicação. A arquitetura de implantação descrita na wiki inclui Docker, NGINX, Cloudflare e serviços \ac{AWS}, como \ac{EC2}, \ac{ECR} e \ac{SSM} Parameter Store.
 
 \subsection{Protótipos das Telas Desenvolvidas}
 
-Os protótipos foram elaborados no Figma: \url{https://www.figma.com/design/N5iThb17TAP2AOIZWBt2zK/ReadRace}. O planejamento das telas contemplou biblioteca, detalhe do livro, registro de progresso, comunidades, clubes, fórum, busca, perfil público e desafios entre amigos.
+A Figura~\ref{fig:readrace-prototipos} apresenta duas telas do planejamento visual. Os protótipos foram elaborados no Figma: \url{https://www.figma.com/design/N5iThb17TAP2AOIZWBt2zK/ReadRace}. O planejamento das telas contemplou biblioteca, detalhe do livro, registro de progresso, comunidades, clubes, fórum, busca, perfil público e desafios entre amigos.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.43\linewidth,height=0.45\textheight,keepaspectratio]{conteudo/5 - ages IV/conteudo/figures/detalhe-livro.png}
 \hspace{1cm}
 \includegraphics[width=0.43\linewidth,height=0.45\textheight,keepaspectratio]{conteudo/5 - ages IV/conteudo/figures/perfil.png}
-\caption{Protótipos do detalhe do livro e do perfil do usuário.}
+\caption{Protótipos do detalhe do livro e do perfil do usuário}
+\label{fig:readrace-prototipos}
 \legend{Fonte: exportações do Figma mantidas no repositório AGESIV.}
 \end{figure}
 
 \subsection{Tecnologias Utilizadas}
 
-O mobile utiliza React Native, Expo, TypeScript, expo-router e NativeWind. O backend utiliza Java 21, Spring Boot, Spring Data JPA, Maven e Springdoc OpenAPI para documentação dos endpoints. A persistência utiliza PostgreSQL e Flyway. Docker e Docker Compose apoiam a execução local, e GitHub Actions executa verificações automatizadas.
+No aplicativo, React Native permite construir interfaces para dispositivos móveis; Expo reúne ferramentas de desenvolvimento e distribuição, e expo-router organiza as rotas. TypeScript apoia a verificação estática de tipos, enquanto NativeWind é utilizado na estilização das telas \cite{reactnative,expo,typescript,nativewind}.
 
-O backend conta com testes unitários e de integração, incluindo Testcontainers, além de JaCoCo para cobertura e Spotless para formatação. No mobile, há verificações de tipos e testes de componentes. As configurações e convenções estão documentadas no README do repositório de código.
+No \textit{backend}, Java 21 e Spring Boot sustentam a \ac{API}; Spring Data \ac{JPA} apoia o acesso aos dados, Maven organiza dependências e compilação, e Springdoc OpenAPI gera a documentação dos \textit{endpoints}. PostgreSQL armazena os dados relacionais e Flyway versiona as alterações do banco \cite{java,spring,jpa,maven,springdoc,postgres,flyway}.
+
+Docker e Docker Compose apoiam a execução dos serviços em contêineres. Na infraestrutura, a documentação inclui NGINX, Cloudflare e serviços \ac{AWS}; o GitHub Actions automatiza verificações no repositório. Esses recursos têm papéis distintos na execução, publicação e verificação da aplicação \cite{docker,nginx,cloudflare,aws,actions,readrace}.
+
+Na qualidade do \textit{backend}, Testcontainers permite executar dependências reais em ambientes de teste isolados, JaCoCo apoia a análise de cobertura e Spotless padroniza a formatação. Playwright foi utilizado nos testes de ponta a ponta descritos na \textit{Sprint} 4. No \textit{mobile}, o projeto também possui verificações de tipos e testes de componentes. As configurações estão registradas no repositório de código \cite{testcontainers,jacoco,spotless,playwright,readracecodigo}.

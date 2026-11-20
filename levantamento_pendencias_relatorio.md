@@ -1,16 +1,6 @@
 # Pendências do memorial descritivo
 
-Atualizado em **18/11/2026**. Esta lista contém somente os pontos ainda abertos. As perguntas respondidas e a reprodução do levantamento antigo foram removidas. Os itens parcialmente respondidos foram reduzidos ao que ainda falta.
-
-## Informações que ainda podem ser complementadas
-
-1. **Uso de agentes de IA:** como você os utilizou na prática? Um exemplo de tarefa, do que precisou orientar ou revisar e de alguma decisão que permaneceu sob sua responsabilidade já ajuda.
-
-2. **Disciplinas do curso:** quais disciplinas ajudaram em decisões concretas dos projetos? Informar o nome, o conceito e um episódio em que o aplicou.
-
-3. **Reflexão final sobre a formação:** além da evolução em apresentação e gestão já descrita, como mudou sua visão de Engenharia de Software? Há algum aprendizado pessoal ou algo que faria diferente em um próximo projeto que ainda não esteja no texto?
-
-4. **Direção profissional:** que caminho pretende seguir e como as experiências da graduação influenciaram essa escolha? O papel de gestão em AGES IV não será tratado automaticamente como preferência de carreira.
+Atualizado em **18/11/2026**. Este arquivo reúne os complementos factuais ainda abertos e o registro da revisão editorial. As perguntas respondidas foram removidas; os itens parcialmente respondidos foram reduzidos ao que ainda falta.
 
 ## Complementos pontuais de AGES I, II e III
 
@@ -26,16 +16,13 @@ Os capítulos já estão escritos. Estes detalhes podem torná-los mais precisos
 | AGES III, Sprint 4 | Qual débito técnico do painel administrativo tratou e quais ajustes fez nas notificações? |
 | AGES III, encerramento | Os ajustes de deploy foram resolvidos? Em que estado o projeto foi entregue? |
 
-## Trabalho editorial restante
+## Situação da revisão editorial
 
-Estes pontos são tarefas de redação e organização, não perguntas a serem respondidas novamente pelo autor.
+O trabalho editorial foi realizado com os dados disponíveis: resumo e palavras-chave, sumário, listas, referências, descrição das tecnologias, telas dos quatro projetos, organização dos capítulos, conclusões e revisão do texto. O ReadRace foi identificado pelo autor como a melhor experiência por gestão e evolução pessoal; essa comparação já foi incorporada e não é mais uma pergunta pendente.
 
-- Escrever as considerações finais das quatro AGES com a reflexão pessoal restante e consolidar a conclusão da AGES IV.
-- Redigir o resumo e incluir sumário e demais elementos aplicáveis ao modelo adotado.
-- Substituir as referências fictícias por fontes efetivamente usadas, organizar as citações e imprimir a bibliografia.
-- Centralizar o capítulo da AGES III, atualmente escrito no `main.tex`, reconciliando os arquivos separados.
-- Revisar ortografia, terminologia, títulos, fontes das figuras e consistência cronológica.
-- Conferir os limites da evidência de qualidade: o PR 265 registra 22 testes locais; a apresentação final registra 30. A issue 233 estava aberta na consulta MCP. Esses registros não comprovam, isoladamente, toda a validação autenticada, nativa ou no CI.
+Os detalhes factuais da tabela acima permanecem como complementos opcionais. As limitações conhecidas foram mantidas de forma explícita: a referência aos 15 segundos é estimativa; os marcos previstos não foram convertidos em datas de execução; e os registros de testes do ReadRace não foram apresentados como comprovação de todos os cenários autenticados, nativos ou no CI.
+
+O resultado e as verificações estão em [conferência editorial](materiais/conferencia_checklist_memorial.md) e [validação do documento](materiais/validacao_editorial.json). Não há lista de tabelas porque o memorial não contém tabelas. Dedicatória, agradecimentos e epígrafe são opcionais e não foram preenchidos com texto inventado.
 
 ## Fontes já reunidas
 
@@ -47,3 +34,7 @@ As respostas e evidências removidas desta lista continuam no memorial e nos mat
 - [Seleção de imagens das quatro wikis](materiais/imagens-wikis/README.md)
 - [Termo de abertura e cronograma do VínculoHub — AGES III](materiais/contexto_vinculohub.md)
 - [Cronologia e relatórios de encerramento — AGES II](materiais/contexto_blockchain.md)
+- [Uso de agentes de IA ao longo das quatro AGES](materiais/uso_agentes_ia.md)
+- [Contribuição das disciplinas e matriz curricular](materiais/contexto_disciplinas.md)
+- [Reflexão sobre os aprendizados nas quatro AGES](materiais/reflexao_formacao.md)
+- [Conferência da versão atual com o checklist institucional](materiais/conferencia_checklist_memorial.md)

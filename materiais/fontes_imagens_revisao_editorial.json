@@ -1,0 +1,23 @@
+[
+  {
+    "source": "materiais\\imagens-wikis\\planline\\09-web.gif",
+    "destination": "relatorio_ages\\conteudo\\2 - ages I\\conteudo\\figures\\tela-votacao-planline.png",
+    "page": "https://tools.ages.pucrs.br/planline/wiki/-/wikis/mockups",
+    "url": "https://tools.ages.pucrs.br/planline/wiki/-/wikis/uploads/5d72e430c3bdad7dd39fe965977768b6/web.gif",
+    "method": "primeiro quadro do GIF"
+  },
+  {
+    "source": "materiais\\imagens-wikis\\blockchain\\26-emissao-certificado.png",
+    "destination": "relatorio_ages\\conteudo\\3 - ages II\\conteudo\\figures\\tela-emissao-blockchain.png",
+    "page": "https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-wiki/-/wikis/Design/Mockups",
+    "url": "https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-wiki/-/wikis/uploads/3e468e0586eb2ea040416fcd53d421a7/emissao-certificado.png",
+    "method": "cópia sem alterações"
+  },
+  {
+    "source": "materiais\\imagens-wikis\\vinculohub\\74-image.png",
+    "destination": "relatorio_ages\\conteudo\\4 - ages III\\conteudo\\figures\\tela-painel-vinculohub.png",
+    "page": "https://tools.ages.pucrs.br/vinculo-hub/wiki/-/wikis/Design",
+    "url": "https://tools.ages.pucrs.br/vinculo-hub/wiki/-/wikis/uploads/c4fbaa6a87648798b23a39bc0c6a8a61/image.png",
+    "method": "cópia sem alterações"
+  }
+]

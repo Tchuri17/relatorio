@@ -1,26 +1,26 @@
 \section[Desenvolvimento do Projeto]{Desenvolvimento do Projeto}
 
 \subsection{Repositório do Código Fonte do Projeto}
-  https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-wiki
+  \url{https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-wiki}
 
-  https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-api
+  \url{https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-api}
 
-  https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-ui
+  \url{https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-ui}
 
-  https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/ethereum-contract
+  \url{https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/ethereum-contract}
 
-  https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/ethereum-bridge
+  \url{https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/ethereum-bridge}
 
-  Nosso projeto foi dividido em cinco repositórios diferentes. O primeiro e padrão da Wiki, o segundo do backend, o terceiro ao frontend , o quarto a API do contrato da nossa aplicação na etherium e por ultimo a "ponte" que liga a blockchain a nossa aplicação backend.
+  Organizamos cinco repositórios: a wiki, o backend, o frontend, os contratos e a camada de integração entre a blockchain e o backend.
 
 \subsection{Banco de Dados Utilizado}
  \href{https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-wiki/-/wikis/Banco-de-Dados}{Documentação do banco de dados na wiki do projeto.}
 
- Para a nossa aplicação usamos o banco de dados relacional Postgrees. Para ele criamos quatro entidades, Certificado, Empresa, Usuário e Permissão. Além dos relcionamentos básicos de conexão entre as entidades criamos um levando em consideração a geração de logs. Além do Postgrees usamos o firebase para a autenticação de usuários.
+Para a aplicação utilizamos PostgreSQL como banco de dados relacional. A modelagem contemplou as entidades Certificado, Empresa, Usuário e Permissão e seus relacionamentos, além da necessidade de registrar \textit{logs}. Firebase foi utilizado para autenticação, uma responsabilidade distinta da persistência dos dados de negócio no PostgreSQL \cite{postgres,firebase,blockchain}.
 \sloppy
 O modelo lógico apresentado na Figura~\ref{fig:blockchain-banco-dados} detalha a organização das tabelas e de seus relacionamentos. Esse artefato complementa o relato sobre a modelagem realizada com meu colega e ajuda a explicar a associação entre empresas, usuários, permissões e certificados.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
     \centering
     \caption{Modelo lógico do banco de dados do projeto Certificação por meio de Blockchain}
     \label{fig:blockchain-banco-dados}
@@ -29,15 +29,15 @@ O modelo lógico apresentado na Figura~\ref{fig:blockchain-banco-dados} detalha 
 \end{figure}
 
 \subsection{Arquitetura Utilizada}
- https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-wiki/-/wikis/arquitetura
+ \url{https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-wiki/-/wikis/arquitetura}
 
- https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-wiki/-/wikis/infraestrutura
+ \url{https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-wiki/-/wikis/infraestrutura}
 
- Para nossa arquitetura, organizamos o sistema em três camadas distintas: o backend, o frontend e a blockchain. A interação entre o frontend e a blockchain ocorria exclusivamente através do backend. Isso significa que todas as requisições e operações realizadas pelo frontend relacionadas à blockchain passavam primeiro pelo backend, que atuava como intermediário. Essa abordagem permitiu maior controle, segurança e facilita a integração entre as diferentes partes do sistema, garantindo que as operações na blockchain sejam realizadas de maneira eficiente e segura, sem expor diretamente o frontend à complexidade da infraestrutura blockchain.
+ Para nossa arquitetura, organizamos o sistema em três camadas distintas: o \textit{backend}, o \textit{frontend} e a \textit{blockchain}. A interação entre o \textit{frontend} e a \textit{blockchain} ocorria exclusivamente através do \textit{backend}. Isso significa que todas as requisições e operações realizadas pelo \textit{frontend} relacionadas à \textit{blockchain} passavam primeiro pelo \textit{backend}, que atuava como intermediário. Essa abordagem permitiu maior controle, segurança e facilita a integração entre as diferentes partes do sistema, garantindo que as operações na \textit{blockchain} sejam realizadas de maneira eficiente e segura, sem expor diretamente o \textit{frontend} à complexidade da infraestrutura \textit{blockchain}.
 
-A Figura~\ref{fig:blockchain-arquitetura} apresenta os componentes da solução, identificada como AuthLink na documentação. A separação entre interface, API, banco de dados e blockchain evidencia o papel do backend na intermediação das operações solicitadas pelos usuários.
+A Figura~\ref{fig:blockchain-arquitetura} apresenta os componentes da solução, identificada como AuthLink na documentação. A separação entre interface, \ac{API}, banco de dados e \textit{blockchain} evidencia o papel do \textit{backend} na intermediação das operações solicitadas pelos usuários.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
     \centering
     \caption{Diagrama de componentes do AuthLink}
     \label{fig:blockchain-arquitetura}
@@ -47,11 +47,21 @@ A Figura~\ref{fig:blockchain-arquitetura} apresenta os componentes da solução,
 
 \subsection{Protótipos das Telas Desenvolvidas}
 \sloppy
-  https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-wiki/-/wikis/design/mockups
+  \url{https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-wiki/-/wikis/design/mockups}
 
-  Para a criação de mockups, usamos o figma. Mais detalhes sobre os mockups, utilize o link acima.
+Os protótipos foram elaborados no Figma e registrados na wiki. A Figura~\ref{fig:blockchain-emissao} apresenta o fluxo de emissão de certificados, uma das operações centrais do produto. A tela permite relacionar os dados fornecidos pela instituição às operações processadas pela aplicação e pela \textit{blockchain}.
+
+\begin{figure}[htbp]
+    \centering
+    \caption{Protótipo da emissão de certificados no AuthLink}
+    \label{fig:blockchain-emissao}
+    \includegraphics[width=0.9\linewidth,height=0.36\textheight,keepaspectratio]{conteudo/3 - ages II/conteudo/figures/tela-emissao-blockchain.png}
+    \legend{Fonte: wiki do projeto Certificação por meio de Blockchain \cite{blockchain}.}
+\end{figure}
 
 \subsection{Tecnologias Utilizadas}
-  https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-wiki/-/wikis/arquitetura
-  
-  Para o frontend usamos TypeScript e  o framework React. Para o backend usamos o Java 21 em conjunto com o  framework SpringBoot. Para a blockchain, além de usarmos a Etherium, usamos sua linguagem Solidity para a criação de contratos.
+TypeScript apoiou a verificação de tipos, React compôs as telas e Java 21 com Spring Boot sustentou o \textit{backend} \cite{typescript,react,java,spring}.
+
+PostgreSQL armazenou os dados e Spring Data \ac{JPA} apoiou a persistência. Lombok reduziu código repetitivo e Firebase apoiou a autenticação \cite{postgres,jpa,lombok,firebase}.
+
+Solidity foi utilizada nos contratos de certificação no Ethereum \cite{ethereum,solidity}.

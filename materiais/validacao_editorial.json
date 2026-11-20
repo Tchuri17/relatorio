@@ -1,0 +1,207 @@
+{
+  "date": "2026-11-18",
+  "pdf": "relatorio_ages/main.pdf",
+  "pages": 87,
+  "sha256": "f9e1921b9a64e37539379557d42f87fdcb9ae9eed3139b7348770b7c5bf0147f",
+  "active_tex_files": 47,
+  "project_chapters": 4,
+  "sprint_sections": 20,
+  "project_conclusions": 4,
+  "figure_count": 17,
+  "figures_without_caption": 0,
+  "figures_without_source": 0,
+  "uncalled_figures": [],
+  "duplicate_labels": [],
+  "missing_cross_references": [],
+  "bibliography_entries": 49,
+  "missing_citations": [],
+  "uncited_entries": [],
+  "acronym_definitions": 30,
+  "undefined_acronyms": [],
+  "unused_acronyms": [],
+  "missing_images": [],
+  "unnumbered_pages_except_cover": [],
+  "text_outside_safe_margins": [],
+  "malformed_url_annotations": [],
+  "layout_or_reference_errors": [],
+  "sprints": [
+    {
+      "title": "Sprint 0 — 11/08/2023 até 25/08/2023",
+      "pdf_page": 16,
+      "next_section_pdf_page": 17,
+      "words_on_allocated_pages": 302
+    },
+    {
+      "title": "Sprint 1 — 25/08/2023 até 15/09/2023",
+      "pdf_page": 17,
+      "next_section_pdf_page": 18,
+      "words_on_allocated_pages": 358
+    },
+    {
+      "title": "Sprint 2 — 15/09/2023 até 06/10/2023",
+      "pdf_page": 18,
+      "next_section_pdf_page": 19,
+      "words_on_allocated_pages": 342
+    },
+    {
+      "title": "Sprint 3 — 06/10/2023 até 27/10/2023",
+      "pdf_page": 19,
+      "next_section_pdf_page": 20,
+      "words_on_allocated_pages": 363
+    },
+    {
+      "title": "Sprint 4 — 27/10/2023 até 17/11/2023",
+      "pdf_page": 20,
+      "next_section_pdf_page": 21,
+      "words_on_allocated_pages": 359
+    },
+    {
+      "title": "Sprint 0",
+      "pdf_page": 28,
+      "next_section_pdf_page": 30,
+      "words_on_allocated_pages": 526
+    },
+    {
+      "title": "Sprint 1",
+      "pdf_page": 30,
+      "next_section_pdf_page": 32,
+      "words_on_allocated_pages": 466
+    },
+    {
+      "title": "Sprint 2",
+      "pdf_page": 32,
+      "next_section_pdf_page": 34,
+      "words_on_allocated_pages": 715
+    },
+    {
+      "title": "Sprint 3",
+      "pdf_page": 34,
+      "next_section_pdf_page": 37,
+      "words_on_allocated_pages": 873
+    },
+    {
+      "title": "Sprint 4",
+      "pdf_page": 37,
+      "next_section_pdf_page": 38,
+      "words_on_allocated_pages": 369
+    },
+    {
+      "title": "Sprint 0",
+      "pdf_page": 47,
+      "next_section_pdf_page": 49,
+      "words_on_allocated_pages": 482
+    },
+    {
+      "title": "Sprint 1",
+      "pdf_page": 49,
+      "next_section_pdf_page": 51,
+      "words_on_allocated_pages": 504
+    },
+    {
+      "title": "Sprint 2",
+      "pdf_page": 51,
+      "next_section_pdf_page": 53,
+      "words_on_allocated_pages": 582
+    },
+    {
+      "title": "Sprint 3",
+      "pdf_page": 53,
+      "next_section_pdf_page": 55,
+      "words_on_allocated_pages": 644
+    },
+    {
+      "title": "Sprint 4",
+      "pdf_page": 55,
+      "next_section_pdf_page": 56,
+      "words_on_allocated_pages": 374
+    },
+    {
+      "title": "Sprint 0",
+      "pdf_page": 65,
+      "next_section_pdf_page": 66,
+      "words_on_allocated_pages": 334
+    },
+    {
+      "title": "Sprint 1",
+      "pdf_page": 66,
+      "next_section_pdf_page": 68,
+      "words_on_allocated_pages": 731
+    },
+    {
+      "title": "Sprint 2",
+      "pdf_page": 68,
+      "next_section_pdf_page": 71,
+      "words_on_allocated_pages": 996
+    },
+    {
+      "title": "Sprint 3",
+      "pdf_page": 71,
+      "next_section_pdf_page": 74,
+      "words_on_allocated_pages": 1064
+    },
+    {
+      "title": "Sprint 4",
+      "pdf_page": 74,
+      "next_section_pdf_page": 78,
+      "words_on_allocated_pages": 1286
+    }
+  ],
+  "chapter_bookmarks": [
+    {
+      "title": "Resumo",
+      "pdf_page": 2
+    },
+    {
+      "title": "Lista de ilustrações",
+      "pdf_page": 3
+    },
+    {
+      "title": "Lista de siglas",
+      "pdf_page": 4
+    },
+    {
+      "title": "Sumário",
+      "pdf_page": 5
+    },
+    {
+      "title": "APRESENTAÇÃO DA TRAJETÓRIA DO ALUNO",
+      "pdf_page": 8
+    },
+    {
+      "title": "AGES I — Plan Line",
+      "pdf_page": 10
+    },
+    {
+      "title": "AGES II — Certificações por meio de Blockchain",
+      "pdf_page": 23
+    },
+    {
+      "title": "AGES III — VínculoHub Portal",
+      "pdf_page": 40
+    },
+    {
+      "title": "AGES IV — ReadRace",
+      "pdf_page": 58
+    },
+    {
+      "title": "Considerações finais",
+      "pdf_page": 80
+    },
+    {
+      "title": "REFERÊNCIAS",
+      "pdf_page": 84
+    }
+  ],
+  "visual_review": "Visão geral de todas as páginas antes da separação das sprints; nova conferência das páginas iniciais, figuras, transições de sprint e referências após a paginação final.",
+  "limits": [
+    "Não foram executados novamente os testes dos projetos relatados.",
+    "Cronogramas previstos e estimativas históricas foram preservados como tais.",
+    "Detalhes factuais opcionais continuam em levantamento_pendencias_relatorio.md."
+  ],
+  "toc_entries_checked": 68,
+  "toc_page_mismatches": [],
+  "remaining_template_warnings": [
+    "babel: idioma brazil obsoleto no modelo abntex2",
+    "memoir: settocpreprocessor obsoleto no modelo abntex2"
+  ]
+}

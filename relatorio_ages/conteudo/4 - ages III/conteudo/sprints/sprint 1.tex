@@ -1,3 +1,18 @@
+\clearpage
 \subsection{Sprint 1}
 
-No mínimo uma página contendo tudo que o aluno fez na Sprint 1.
+O cronograma previa a apresentação da \textit{Sprint} 1 aos \textit{stakeholders} e o planejamento da \textit{Sprint} 2 em 15 de abril de 2026. A retrospectiva, o relatório da \textit{sprint} e o Relatório de Acompanhamento no formato de memorial estavam previstos para 22 de abril. Essas datas situam os marcos de planejamento da etapa.
+
+Após a estruturação e a prototipação da \textit{Sprint} 0, passamos a implementar a base funcional da plataforma. Minha principal atuação concentrou-se na autenticação e no controle de acesso. Como o sistema possuía perfis distintos de organizações sociais, empresas e administradores, essa base precisava considerar as diferentes jornadas e permissões.
+
+Estudei provedores de autenticação externa, entre eles Clerk, Firebase e Auth0. Consultei a documentação e discuti com os colegas as possibilidades de integração e a adequação ao projeto. Optamos pelo Auth0, considerando os recursos de perfis de acesso e sua integração com as aplicações. Em seguida, participei da configuração inicial e da conexão com o sistema.
+
+Esse trabalho envolveu a criação e configuração do ambiente da aplicação no provedor, a definição de perfis e permissões, usuários de teste e redirecionamentos após o acesso. Também participei da integração do \textit{frontend}, da validação dos tokens no \textit{backend} e da sincronização das identidades externas com os registros internos. No banco, contribuí para a inclusão do campo \texttt{auth0\_id} na tabela de usuários, estabelecendo a associação com o Auth0, além de ajustes de nomenclatura e padronização.
+
+Paralelamente, participei dos \textit{squads} criados para dividir o trabalho. Essa organização ajudou a concentrar responsabilidades, mas percebi dificuldades de alinhamento, atrasos e tarefas executadas perto do prazo. Mesmo sem ocupar uma posição formal de liderança, reconheci que poderia ter acompanhado melhor as dependências e comunicado os riscos mais cedo. O conhecimento técnico que eu já possuía não eliminava a necessidade de atenção à organização coletiva.
+
+Ao final, avançamos na autenticação, na definição de perfis e na integração entre as camadas. Ficou pendente a tela de cadastro do primeiro projeto da ONG, que fazia parte do fluxo de entrada da organização na plataforma. Essa etapa era importante para que o cadastro institucional estivesse acompanhado de uma iniciativa concreta a ser apresentada às empresas.
+
+A pendência envolvia dependências entre interface, persistência de projetos, autenticação e coerência visual com as demais etapas do cadastro. As tarefas próximas do prazo reduziram o tempo para revisão, integração e correções. Essa situação mostrou que uma tela aparentemente localizada podia exigir coordenação entre várias partes do sistema. Também reforçou a necessidade de manter o diálogo entre prototipação e implementação durante a \textit{sprint}.
+
+Minha principal autocrítica foi não ter antecipado suficientemente os gargalos do \textit{squad}. Eu poderia ter buscado alinhamentos mais frequentes e sinalizado as dificuldades antes de se acumularem. O aprendizado foi reconhecer a diferença entre concluir uma implementação e concluir um fluxo utilizável: a entrega depende das integrações, da revisão e da clareza sobre o que permanece pendente. A base de autenticação avançou, mas o cadastro do primeiro projeto ainda precisava ser finalizado.
