@@ -2,13 +2,13 @@
 
 \subsection{Repositório do Código Fonte do Projeto}
 
-O projeto \textbf{VínculoHub Portal} foi organizado em um repositório principal no GitHub, contendo as aplicações de \textit{frontend} e \textit{backend}, a documentação técnica, os arquivos de infraestrutura e os scripts de apoio ao desenvolvimento.
+O projeto \textbf{VínculoHub Portal} foi organizado em um repositório principal no GitHub, contendo as aplicações de \textit{frontend} e \textit{backend}, a documentação técnica, os arquivos de infraestrutura e os \textit{scripts} de apoio ao desenvolvimento.
 
 \begin{itemize}
 \item Repositório principal: \url{https://github.com/VinculoHub-Portal/VinculoHubPortal}
 \end{itemize}
 
-A estrutura do repositório foi dividida principalmente entre as pastas \texttt{frontend}, \texttt{backend} e \texttt{docs}. A pasta \texttt{frontend} concentrou a aplicação web utilizada pelos diferentes perfis de usuário. A pasta \texttt{backend} reuniu a \ac{API}, as regras de negócio, a integração com banco de dados, autenticação, documentos e serviços externos. A pasta \texttt{docs} foi utilizada para registrar materiais de apoio, validações de \textit{sprint}, tarefas refinadas e a modelagem do banco de dados.
+A estrutura do repositório foi dividida principalmente entre as pastas \texttt{frontend}, \texttt{backend} e \texttt{docs}. A pasta \texttt{frontend} concentrou a aplicação \textit{web} utilizada pelos diferentes perfis de usuário. A pasta \texttt{backend} reuniu a \ac{API}, as regras de negócio, a integração com banco de dados, autenticação, documentos e serviços externos. A pasta \texttt{docs} foi utilizada para registrar materiais de apoio, validações de \textit{sprint}, tarefas refinadas e a modelagem do banco de dados.
 
 Além disso, o projeto possui arquivos de orquestração e infraestrutura, como \texttt{docker-compose.yml}, \texttt{docker-compose.dev.yml}, \texttt{docker-compose.swarm.yml} e \texttt{main.tf}, evidenciando uma preocupação com padronização de ambiente, execução local e preparação para \textit{deploy} em nuvem.
 
@@ -31,11 +31,11 @@ A entidade \texttt{users} armazena os dados básicos do usuário e mantém integ
 
 \subsection{Arquitetura Utilizada}
 
-A Figura~\ref{fig:vinculohub-arquitetura} apresenta a infraestrutura documentada. A arquitetura do projeto foi baseada em uma aplicação web separada em \textit{frontend}, \textit{backend}, banco de dados e serviços externos. O \textit{frontend} se comunica com o \textit{backend} por meio de \ac{API} \ac{REST}. O \textit{backend} centraliza as regras de negócio, validações, persistência dos dados, segurança e integrações externas. O banco PostgreSQL armazena os dados relacionais da aplicação.
+A Figura~\ref{fig:vinculohub-arquitetura} apresenta a infraestrutura documentada. A arquitetura do projeto foi baseada em uma aplicação \textit{web} separada em \textit{frontend}, \textit{backend}, banco de dados e serviços externos. O \textit{frontend} se comunica com o \textit{backend} por meio de \ac{API} \ac{REST}. O \textit{backend} centraliza as regras de negócio, validações, persistência dos dados, segurança e integrações externas. O banco PostgreSQL armazena os dados relacionais da aplicação.
 
 A autenticação e autorização foram integradas ao \textbf{Auth0}, com separação de perfis por \textit{roles}, como \texttt{COMPANY}, \texttt{NPO} e \texttt{ADMIN}. Essa separação permitiu controlar o acesso às rotas e funcionalidades específicas de empresas, \ac{ONGs} e administradores.
 
-O projeto também utilizou \textbf{Docker Compose} para execução local dos serviços, incluindo \textit{backend}, \textit{frontend}, banco PostgreSQL e Flyway. Para armazenamento de arquivos, como documentos e editais, foi prevista integração com \textbf{\ac{AWS} \ac{S3}}. A documentação e os arquivos de infraestrutura também indicam uma organização voltada a \textit{deploy} em ambiente \ac{AWS}, com uso de \ac{EC2}, Docker Swarm, Elastic Block Storage e bucket \ac{S3}.
+O projeto também utilizou \textbf{Docker Compose} para execução local dos serviços, incluindo \textit{backend}, \textit{frontend}, banco PostgreSQL e Flyway. Para armazenamento de arquivos, como documentos e editais, foi prevista integração com \textbf{\ac{AWS} \ac{S3}}. A documentação e os arquivos de infraestrutura também indicam uma organização voltada a \textit{deploy} em ambiente \ac{AWS}, com uso de \ac{EC2}, Docker Swarm, Elastic Block Storage e \textit{bucket} \ac{S3}.
 
 \begin{figure}[!htbp]
     \centering
@@ -50,7 +50,7 @@ Essa arquitetura permitiu organizar ambientes de desenvolvimento e produção, p
 
 \subsection{Protótipos das Telas Desenvolvidas}
 
-Durante o desenvolvimento do VínculoHub Portal, os protótipos e fluxos de tela serviram como base para a construção das principais experiências da aplicação. Entre os fluxos contemplados estavam o cadastro de \ac{ONGs}, cadastro de empresas, \textit{dashboards} por perfil, mural de editais, perfil público de \ac{ONGs}, perfil público de empresas, cadastro e edição de projetos, upload de documentos, denúncias e gestão de vínculos.
+Durante o desenvolvimento do VínculoHub Portal, os protótipos e fluxos de tela serviram como base para a construção das principais experiências da aplicação. Entre os fluxos contemplados estavam o cadastro de \ac{ONGs}, cadastro de empresas, \textit{dashboards} por perfil, mural de editais, perfil público de \ac{ONGs}, perfil público de empresas, cadastro e edição de projetos, \textit{upload} de documentos, denúncias e gestão de vínculos.
 
 No \textit{frontend}, esses fluxos foram implementados em páginas e componentes específicos, como \texttt{AdminDashboard}, \texttt{CompanyDashboard}, \texttt{OngProfilePage}, \texttt{OngPublicProfilePage}, \texttt{ProjectDetailsPage}, \texttt{EditaisMuralPage}, \texttt{MyRelationshipsPage} e páginas administrativas para \ac{ONGs}, vínculos e notificações.
 
@@ -66,12 +66,12 @@ A documentação visual está disponível na \href{https://tools.ages.pucrs.br/v
 
 \subsection{Tecnologias Utilizadas}
 
-No \textit{frontend}, React organizou a interface em componentes, TypeScript apoiou a verificação de tipos e Vite forneceu ferramentas de desenvolvimento e construção da aplicação. Material UI ofereceu componentes de interface e Tailwind \ac{CSS} apoiou a estilização \cite{react,typescript,vite,mui,tailwind}.
+No \textit{frontend}, React organizou a interface em componentes, TypeScript apoiou a verificação de tipos e Vite forneceu ferramentas de desenvolvimento e construção da aplicação. Material \ac{UI} ofereceu componentes de interface e Tailwind \ac{CSS} apoiou a estilização \cite{react,typescript,vite,mui,tailwind}.
 
 React Router organizou a navegação; React Query apoiou a consulta e o gerenciamento de dados remotos; Axios foi utilizado nas requisições \ac{HTTP}. A integração de autenticação foi apoiada pelo \ac{SDK} do Auth0. Para a qualidade da interface, Vitest foi empregado na execução de testes, Testing Library na verificação de componentes e Playwright em cenários de ponta a ponta \cite{router,query,axios,auth0,vitest,testinglibrary,playwright}.
 
-No \textit{backend}, Java 17 e Spring Boot sustentaram a \ac{API} e as regras de negócio. Os módulos Spring Web, Spring Data \ac{JPA} e Spring Security apoiaram, respectivamente, os \textit{endpoints}, a persistência e a segurança, incluindo a validação de acesso com OAuth2. PostgreSQL armazenou os dados e Flyway controlou as migrações. Lombok foi utilizado para reduzir código repetitivo, e Swagger/OpenAPI para a documentação das operações \cite{spring,jpa,security,postgres,flyway,lombok,vinculohub}.
+No \textit{backend}, Java 17 e Spring Boot sustentaram a \ac{API} e as regras de negócio. Os módulos Spring \textit{Web}, Spring Data \ac{JPA} e Spring Security apoiaram, respectivamente, os \textit{endpoints}, a persistência e a segurança, incluindo a validação de acesso com OAuth2. PostgreSQL armazenou os dados e Flyway controlou as migrações. Lombok foi utilizado para reduzir código repetitivo, e Swagger/OpenAPI para a documentação das operações \cite{spring,jpa,security,postgres,flyway,lombok,vinculohub}.
 
-Na infraestrutura, Docker e Docker Compose padronizaram a execução dos serviços. Os arquivos Terraform descreveram recursos de infraestrutura, enquanto os serviços \ac{AWS} foram utilizados no contexto de implantação e armazenamento, incluindo \ac{S3} para documentos. Esses recursos precisam ser diferenciados das funcionalidades de negócio implementadas no sistema \cite{docker,terraform,aws}.
+Na infraestrutura, Docker e Docker Compose padronizaram a execução dos serviços. Os arquivos Terraform descreveram recursos de infraestrutura, enquanto os serviços \ac{AWS} foram utilizados no contexto de implantação e armazenamento, incluindo \ac{S3} para documentos \cite{docker,terraform,aws}.
 
-Na qualidade do \textit{backend}, o projeto utilizou JUnit para testes, Testcontainers para dependências em ambiente isolado e JaCoCo para cobertura, conforme o registro técnico do projeto. Spotless apoiou a formatação; PMD e SpotBugs realizaram análise estática. A presença dessas ferramentas no projeto não significa, por si só, que todos os cenários de uso tenham sido validados \cite{junit,testcontainers,jacoco,spotless,pmd,spotbugs,vinculohub}.
+Na qualidade do \textit{backend}, o projeto utilizou JUnit para testes, Testcontainers para dependências em ambiente isolado e JaCoCo para cobertura, conforme o registro técnico do projeto. Spotless apoiou a formatação; PMD e SpotBugs realizaram análise estática. Sua presença não comprova a validação de todos os cenários \cite{junit,testcontainers,jacoco,spotless,pmd,spotbugs,vinculohub}.

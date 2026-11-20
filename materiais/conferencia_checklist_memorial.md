@@ -1,6 +1,6 @@
 # Conferência editorial com o checklist do memorial
 
-Atualizado em **18/11/2026**, após a revisão editorial solicitada pelo autor. A versão anterior deste arquivo era um diagnóstico de pendências; este registro apresenta o trabalho realizado e os limites preservados.
+Atualizado em **19/11/2026**, após a revisão editorial solicitada pelo autor. A versão anterior deste arquivo era um diagnóstico de pendências; este registro apresenta o trabalho realizado e os limites preservados.
 
 Fonte dos critérios: `C:/Users/Arthur/Downloads/AGES-Checklist-MemorialDescritivo-v1.pdf`, duas páginas. Documento revisado: `relatorio_ages/main.tex` e seus arquivos incluídos. Os resultados verificáveis da compilação estão em [validacao_editorial.json](validacao_editorial.json).
 
@@ -14,7 +14,7 @@ Fonte dos critérios: `C:/Users/Arthur/Downloads/AGES-Checklist-MemorialDescriti
 | 5 | Resumo em parágrafo único com palavras-chave ao final. |
 | 6 | Lista de ilustrações gerada a partir das 17 legendas. |
 | 7 | Não se aplica: não há tabelas no memorial; por isso não foi criada lista de tabelas vazia. |
-| 8 | Lista de 30 siglas usadas, com as definições ligadas ao texto. |
+| 8 | Lista de 29 siglas usadas, com as definições ligadas ao texto. |
 | 9 | Sumário gerado pelo LaTeX, incluindo as sprints, com numeração atualizada após a compilação. |
 | 10–12 | Hierarquia e numeração geradas pelo LaTeX. Capítulos começam em novas páginas; todas as páginas, exceto a capa, exibem número. |
 | 13 | Apresentação atualizada com as experiências profissionais, oitavo semestre e direção atual para gestão. |
@@ -36,7 +36,8 @@ Fonte dos critérios: `C:/Users/Arthur/Downloads/AGES-Checklist-MemorialDescriti
 | 2 e 8 | Revisão de concordância, pontuação, grafias e trechos repetitivos, com atenção aos capítulos antigos. Foram corrigidos nomes como PostgreSQL, Ethereum e Spring Boot. |
 | 3–7 | Mantidas fonte, tamanho, alinhamento e espaçamento globais. Títulos e hierarquia organizados em todos os capítulos. Listas e referências usam apresentação adequada à sua função. |
 | 9–10 | Todas as 17 figuras possuem legenda e indicação de fonte. As fontes da apresentação final e do termo de abertura também foram incluídas nas referências. |
-| 11–12 | Revisão visual geral das páginas e inspeção da disposição das figuras. Foram removidas repetições que geravam páginas com poucos parágrafos e ajustadas as posições das figuras. Diagramas completos foram preservados, com arquivos de imagem mantidos para consulta ampliada. |
+| 11 | **Ressalva de legibilidade:** com os tamanhos anteriores restaurados, os campos dos modelos completos de banco ficam pequenos na página, sobretudo no Plan Line e no ReadRace. É necessário ampliar no leitor de PDF. Este critério não está integralmente atendido para leitura no tamanho da página. Os tamanhos foram preservados conforme a preferência do autor. |
+| 12 | As imagens estão dentro das margens, com as fontes preservadas. Modelos completos aparecem sem recortes ou páginas na horizontal. Páginas dedicadas a figuras e espaços reservados aos diagramas fazem parte da disposição atual. |
 | 13–16 | Numeração sequencial pelo LaTeX, rótulos únicos, chamadas das figuras no texto e lista de ilustrações sincronizada. |
 | 17 | Não se aplica enquanto não houver tabelas. |
 | 18–20 | Siglas usadas foram inventariadas; as definições são apresentadas na primeira ocorrência correspondente e na lista. Não há entradas de siglas sem uso no texto. Nomes de produtos não foram tratados automaticamente como siglas a desenvolver. |
@@ -61,3 +62,32 @@ As referências à documentação geral não alteram as versões históricas rel
 ## Procedência das novas imagens
 
 A seleção desta revisão está documentada em [fontes_imagens_revisao_editorial.json](fontes_imagens_revisao_editorial.json). As telas do AuthLink e VínculoHub são cópias das imagens reunidas nas wikis; a tela do Plan Line é o primeiro quadro da demonstração em GIF. Nenhuma delas foi gerada por IA. A comparação da biblioteca do ReadRace mantém a origem já registrada na apresentação final.
+
+## Ajuste de narrativa da AGES IV — 19/11/2026
+
+Por solicitação do autor, foram retirados os horários e as explicações sobre entregas de relatórios e memoriais. As tarefas compartilhadas com o squad e as contribuições coletivas passaram a ser descritas de forma global, mantendo exemplos da atuação individual. Expressões de transcrição de horas, como “registrei trabalho” e “em outro período registrado”, foram substituídas por uma narrativa direta das atividades. As fontes históricas permanecem nos materiais de apoio. O PDF foi recompilado e a validação atualizada.
+
+## Fechamento da revisão — 19/11/2026
+
+Os 49 critérios do checklist foram conferidos. Após a restauração dos tamanhos das imagens, há uma ressalva no item 11 de Conteúdo, referente à legibilidade dos diagramas completos. Os demais itens aplicáveis foram atendidos na revisão; dedicatória, agradecimentos e epígrafe são opcionais e não foram incluídos. Os critérios relativos a tabelas não se aplicam, pois o memorial não contém tabelas.
+
+- Revisão final de ortografia, concordância e repetições, com reescrita dos trechos antigos da AGES II e preservação das atividades relatadas.
+- Padronização de estrangeirismos no corpo do texto e nas definições de siglas, incluindo *upload*, *design*, *designer*, *hardware* e termos de desenvolvimento. Identificadores de código, endereços e nomes próprios conservam sua apresentação apropriada.
+- Tamanhos originais das imagens restaurados após a revisão, por preferência do autor. Permanecem 17 ilustrações e os modelos completos.
+- A conferência visual anterior foi seguida de nova compilação após a restauração dos tamanhos das imagens; a contagem atual consta no registro de validação.
+- PDF compilado em duas passagens finais, sem erros de referências cruzadas, citações, figuras maiores que a página ou texto ultrapassando as margens. Sumário e numeração conferidos, com todas as páginas novamente na orientação original.
+- Resultado: 20 subseções de sprint, quatro conclusões de projeto, 17 figuras com legenda e fonte, 49 referências citadas e 29 siglas definidas e usadas.
+
+Os complementos históricos opcionais do levantamento de pendências continuam separados desta revisão editorial. Não foram preenchidos com suposições.
+
+## Restauração dos tamanhos das imagens — 19/11/2026
+
+A pedido do autor, foram revertidos os aumentos, os recortes e as páginas na horizontal introduzidos na revisão. As legendas e os comentários dos modelos de banco voltaram a descrever as figuras completas. A revisão de linguagem foi mantida. A legibilidade dos diagramas completos volta a depender de ampliação no leitor de PDF.
+
+## Nova conferência após a restauração — 19/11/2026
+
+Resultado dos 49 critérios: **45 atendidos, um com ressalva, um opcional e dois não aplicáveis**. O opcional é Estrutura 2; os não aplicáveis são Estrutura 7 e Conteúdo 17. A ressalva é Conteúdo 11, descrita acima.
+
+A versão atual tem 83 páginas, 20 sprints, quatro conclusões de projeto, 17 figuras com legenda e fonte, 49 referências citadas e 29 siglas definidas e usadas. Foram novamente conferidos os arquivos incluídos, a correspondência das citações e referências, as chamadas das figuras, os números visíveis, as margens e as 68 entradas do sumário. Não foram encontrados erros de compilação, referências indefinidas ou figuras ultrapassando a página. Foi corrigido um ponto indevido antes de uma citação na descrição de infraestrutura da AGES III.
+
+Os tamanhos das imagens permanecem restaurados. A ressalva de legibilidade não implica que se tenha autorizado novo aumento ou recorte.

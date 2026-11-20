@@ -2,14 +2,14 @@
 
 \subsection{Repositório do Código Fonte do Projeto}
 
-Para organizar o desenvolvimento do Plan Line, a equipe optou por separar o projeto em quatro repositórios principais: Wiki, \textit{backend}, \textit{mobile} e web. Essa divisão ajudou a manter o projeto mais encapsulado, facilitando a organização das responsabilidades e a consulta das informações técnicas por frente de desenvolvimento.
+Para organizar o desenvolvimento do Plan Line, a equipe optou por separar o projeto em quatro repositórios principais: Wiki, \textit{backend}, \textit{mobile} e \textit{web}. Essa divisão ajudou a manter o projeto mais encapsulado, facilitando a organização das responsabilidades e a consulta das informações técnicas por frente de desenvolvimento.
 
 {\footnotesize
 \begin{itemize}
     \item Wiki: \url{https://tools.ages.pucrs.br/planline/wiki}
     \item \textit{Backend}: \url{https://tools.ages.pucrs.br/planline/backend}
     \item \textit{Mobile}: \url{https://tools.ages.pucrs.br/planline/mobile}
-    \item Web: \url{https://tools.ages.pucrs.br/planline/web}
+    \item \textit{Web}: \url{https://tools.ages.pucrs.br/planline/web}
 \end{itemize}
 }
 
@@ -39,17 +39,11 @@ A Figura~\ref{fig:planline-banco-dados} apresenta a modelagem documentada para o
 
 \subsection{Arquitetura Utilizada}
 
-A arquitetura escolhida para o Plan Line foi baseada em Clean Architecture. Essa escolha tinha como objetivo organizar melhor as responsabilidades do sistema, separando regras de negócio, infraestrutura, interfaces e camadas externas. Para uma equipe em formação, essa abordagem também funcionou como uma oportunidade de aprendizado sobre organização de código e divisão de responsabilidades em aplicações web.
+A arquitetura do Plan Line foi baseada em \textit{Clean Architecture}, separando regras de negócio, infraestrutura e interfaces. Para uma equipe em formação, essa organização ajudou a compreender a divisão de responsabilidades no código.
 
-As informações de arquitetura foram registradas na Wiki:
+A arquitetura foi documentada na \href{https://tools.ages.pucrs.br/planline/wiki/-/wikis/arquitetura}{wiki do projeto}.
 
-{\footnotesize
-\begin{itemize}
-    \item Arquitetura: \url{https://tools.ages.pucrs.br/planline/wiki/-/wikis/arquitetura}
-\end{itemize}
-}
-
-A Figura~\ref{fig:planline-arquitetura} complementa a descrição da organização do código com a visão de implantação. O diagrama mostra as aplicações web e \textit{mobile} e sua comunicação com o \textit{backend} e os serviços de dados utilizados pelo projeto.
+A Figura~\ref{fig:planline-arquitetura} complementa a descrição da organização do código com a visão de implantação. O diagrama mostra as aplicações \textit{web} e \textit{mobile} e sua comunicação com o \textit{backend} e os serviços de dados utilizados pelo projeto.
 
 \begin{figure}[!htbp]
     \centering
@@ -61,7 +55,7 @@ A Figura~\ref{fig:planline-arquitetura} complementa a descrição da organizaç�
 
 \subsection{Protótipos das Telas Desenvolvidas}
 
-Os protótipos das telas foram desenvolvidos no Figma com apoio da designer da Triider. Essa etapa foi importante para alinhar expectativas com os \textit{stakeholders} e orientar a implementação das interfaces web e \textit{mobile}. Os \textit{mockups} também ajudaram a equipe a compreender melhor os fluxos esperados para criação de sessões, participação nas votações e visualização dos resultados.
+Os protótipos das telas foram desenvolvidos no Figma com apoio da \textit{designer} da Triider. Essa etapa foi importante para alinhar expectativas com os \textit{stakeholders} e orientar a implementação das interfaces \textit{web} e \textit{mobile}. Os \textit{mockups} também ajudaram a equipe a compreender melhor os fluxos esperados para criação de sessões, participação nas votações e visualização dos resultados.
 
 {\footnotesize
 \begin{itemize}
@@ -69,7 +63,7 @@ Os protótipos das telas foram desenvolvidos no Figma com apoio da designer da T
 \end{itemize}
 }
 
-A Figura~\ref{fig:planline-votacao} mostra uma das telas da aplicação web demonstrada na wiki. A apresentação das histórias e dos resultados da votação permite visualizar o objetivo central do produto: apoiar a estimativa coletiva de esforço.
+A Figura~\ref{fig:planline-votacao} mostra uma das telas da aplicação \textit{web} demonstrada na wiki. A apresentação das histórias e dos resultados da votação permite visualizar o objetivo central do produto: apoiar a estimativa coletiva de esforço.
 
 \begin{figure}[htbp]
     \centering
@@ -81,7 +75,7 @@ A Figura~\ref{fig:planline-votacao} mostra uma das telas da aplicação web demo
 
 \subsection{Tecnologias Utilizadas}
 
-Na interface web, \ac{HTML} estruturou o conteúdo das páginas, \ac{CSS} definiu sua apresentação e JavaScript permitiu implementar interações. TypeScript acrescentou verificação estática de tipos ao desenvolvimento em JavaScript. Essas tecnologias compuseram a base do trabalho com componentes e integração com a aplicação \cite{mdn,typescript}.
+Na interface \textit{web}, \ac{HTML} estruturou o conteúdo das páginas, \ac{CSS} definiu sua apresentação e JavaScript permitiu implementar interações. TypeScript acrescentou verificação estática de tipos ao desenvolvimento em JavaScript. Essas tecnologias compuseram a base do trabalho com componentes e integração com a aplicação \cite{mdn,typescript}.
 
 React foi utilizado para construir a interface em componentes reutilizáveis, enquanto Tailwind \ac{CSS} apoiou a estilização por meio de classes utilitárias. No \textit{backend}, Node.js permitiu executar JavaScript fora do navegador, e Prisma apoiou o acesso aos dados. A persistência relacional ficou a cargo do PostgreSQL; Firebase foi utilizado na organização das sessões, conforme a documentação do projeto \cite{react,tailwind,node,prisma,postgres,firebase,planline}.
 

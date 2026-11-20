@@ -11,11 +11,13 @@
 
   \url{https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/ethereum-bridge}
 
-  Organizamos cinco repositórios: a wiki, o backend, o frontend, os contratos e a camada de integração entre a blockchain e o backend.
+  Organizamos cinco repositórios: a wiki, o \textit{backend}, o \textit{frontend}, os contratos e a camada de integração entre a \textit{blockchain} e o \textit{backend}.
 
 \subsection{Banco de Dados Utilizado}
  \href{https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-wiki/-/wikis/Banco-de-Dados}{Documentação do banco de dados na wiki do projeto.}
 
+Para a aplicação utilizamos PostgreSQL como banco de dados relacional. A modelagem contemplou as entidades Certificado, Empresa, Usuário e Permissão e seus relacionamentos, além da necessidade de registrar \textit{logs}. Firebase foi utilizado para autenticação, uma responsabilidade distinta da persistência dos dados de negócio no PostgreSQL \cite{postgres,firebase,blockchain}.
+\sloppy
 Para a aplicação utilizamos PostgreSQL como banco de dados relacional. A modelagem contemplou as entidades Certificado, Empresa, Usuário e Permissão e seus relacionamentos, além da necessidade de registrar \textit{logs}. Firebase foi utilizado para autenticação, uma responsabilidade distinta da persistência dos dados de negócio no PostgreSQL \cite{postgres,firebase,blockchain}.
 \sloppy
 O modelo lógico apresentado na Figura~\ref{fig:blockchain-banco-dados} detalha a organização das tabelas e de seus relacionamentos. Esse artefato complementa o relato sobre a modelagem realizada com meu colega e ajuda a explicar a associação entre empresas, usuários, permissões e certificados.
@@ -33,7 +35,7 @@ O modelo lógico apresentado na Figura~\ref{fig:blockchain-banco-dados} detalha 
 
  \url{https://tools.ages.pucrs.br/certifica-o-por-meio-de-blockchain/blockchain-wiki/-/wikis/infraestrutura}
 
- Para nossa arquitetura, organizamos o sistema em três camadas distintas: o \textit{backend}, o \textit{frontend} e a \textit{blockchain}. A interação entre o \textit{frontend} e a \textit{blockchain} ocorria exclusivamente através do \textit{backend}. Isso significa que todas as requisições e operações realizadas pelo \textit{frontend} relacionadas à \textit{blockchain} passavam primeiro pelo \textit{backend}, que atuava como intermediário. Essa abordagem permitiu maior controle, segurança e facilita a integração entre as diferentes partes do sistema, garantindo que as operações na \textit{blockchain} sejam realizadas de maneira eficiente e segura, sem expor diretamente o \textit{frontend} à complexidade da infraestrutura \textit{blockchain}.
+O sistema foi organizado em três camadas: \textit{frontend}, \textit{backend} e \textit{blockchain}. As operações solicitadas pela interface passavam pelo \textit{backend}, que intermediava o acesso à \textit{blockchain} e aos dados da aplicação. Essa separação concentrou o tratamento das requisições e as integrações externas no servidor.
 
 A Figura~\ref{fig:blockchain-arquitetura} apresenta os componentes da solução, identificada como AuthLink na documentação. A separação entre interface, \ac{API}, banco de dados e \textit{blockchain} evidencia o papel do \textit{backend} na intermediação das operações solicitadas pelos usuários.
 
